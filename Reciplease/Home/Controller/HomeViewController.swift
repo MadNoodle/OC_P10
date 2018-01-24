@@ -8,32 +8,34 @@
 
 import UIKit
 
-protocol RecipeFetcher {
-  func getIngredients() -> [String]
+protocol RecipeFetcherDelegate  {
+  var list: [String] { get }
 }
-class HomeViewController: UIViewController {
+
+
+class HomeViewController: UIViewController, RecipeFetcherDelegate {
   
+
   /// Array to store ingredients entered by user
-  var ingredientList : [String] = []
+  var list : [String] = []
   
   // MARK: - OUTLETS
   @IBOutlet weak var ingrdientTable: UITableView!
   @IBOutlet weak var inputTextField: UITextField!
 
-  
   // MARK: - LIFECYCLE METHODS
+
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "HOME"
-    inputTextField.delegate = self
-    // set delegation for Ingredients tableView
-    ingrdientTable.delegate = self
-    ingrdientTable.dataSource = self
+    
+    setupDelegations()
     // Register cell
     ingrdientTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
     ingrdientTable.reloadData()
     
   }
+  
   // MARK: - ACTIONS
   @IBAction func addIngredient(_ sender: UIButton) {
     loadTextFromTextField()
@@ -41,15 +43,33 @@ class HomeViewController: UIViewController {
   
   @IBAction func clearList(_ sender: UIButton) {
     // faire une fonction show alert pour confirmation
-    ingredientList = []
+    list = []
     ingrdientTable.reloadData()
   }
   
   @IBAction func searchRecipes(_ sender: UIButton) {
-    let searchResultVc = SearchResultController()
-    navigationController?.pushViewController(searchResultVc, animated: true)
+    // instantiate controller
+     let searchResultVc = SearchResultController()
+    // set delegation
+      searchResultVc.delegate = self
+      navigationController?.pushViewController(searchResultVc, animated: true)
+    
+    
+    }
+
+
+  // MARK: - Delegations
+  func setupDelegations() {
+   
+    // Set delegation for textField
+    inputTextField.delegate = self
+    // set delegation for Ingredients tableView
+    ingrdientTable.delegate = self
+    ingrdientTable.dataSource = self
+    
   }
   
+
   // MARK: - Display Methods
   
   /**
@@ -65,7 +85,7 @@ class HomeViewController: UIViewController {
   func loadTextFromTextField() {
     let text = inputTextField.text
     if text != "" {
-      ingredientList.append(text!)
+      list.append(text!)
       ingrdientTable.reloadData()
       inputTextField.text = ""
     }

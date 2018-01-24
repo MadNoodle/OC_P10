@@ -35,8 +35,6 @@ class MainTabBarController: UITabBarController {
     //Initialization of controllers
     let homeVc = HomeViewController()
     let favoriteVc = FavoriteViewController()
-   
-    
     // Assign controllers to tab bar
     viewControllers = [
       createTabBarItem("Home", imageName: "ic_home", for: homeVc),
@@ -56,15 +54,16 @@ class MainTabBarController: UITabBarController {
     let navController = UINavigationController(rootViewController: controller)
     // Set title
     navController.tabBarItem.title = title
-    //Set font
+    //Set fonts for navbar title
     navController.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Montserrat-Bold", size: 22)!]
-    // Hide titles
+    //Set fonts for back Button
+     UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Montserrat-Bold", size: 15)!], for: UIControlState.normal)
+    navController.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.5490196078, blue: 0.168627451, alpha: 1)
+    // Hide titles in tab bar
     navController.tabBarItem.tabBarItemShowingOnlyImage()
-    //Set icon
+    //Set icon for tab bar
     navController.tabBarItem.image = UIImage(named: imageName)
     return navController
   }
-
-
 }
 
