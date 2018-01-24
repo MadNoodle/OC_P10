@@ -8,8 +8,8 @@
 
 import Foundation
 
+
 class RecipeObject {
-  
   let id: String?
   let recipeName: String?
   let image: String?
@@ -23,13 +23,12 @@ class RecipeObject {
     self.recipeName = recipeDictionnary["name"] as? String
     var smallImage = ""
     if let imagesUrl = recipeDictionnary["images"] as? [[String:Any]]{
-      smallImage = (imagesUrl[0]["hostedSmallUrl"] as? String)!}
+      smallImage = (imagesUrl[0]["hostedLargeUrl"] as? String)!}
     self.image = smallImage
     self.ingredients = recipeDictionnary["ingredientLines"] as? [String]
     self.totalTime = recipeDictionnary["totalTime"] as? String
     self.yield = recipeDictionnary["yield"] as? String
     self.ratings = recipeDictionnary["rating"] as? Int
   }
-  
   
 }

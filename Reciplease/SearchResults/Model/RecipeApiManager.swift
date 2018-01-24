@@ -22,9 +22,8 @@ class RecipeApiManager {
   /// - Returns: String encoded urlFriendly
   static func splitIngredients(list: [String]) -> String {
     var ingredients: String = ""
-    ingredients = list.joined(separator: " ")
-    guard let encodedParameters = ingredients.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return "error"}
-    return encodedParameters
+    ingredients = list.joined(separator: Constants.ADD_INGREDIENTS)
+    return ingredients
   }
   
   /**
@@ -81,11 +80,11 @@ class RecipeApiManager {
   /**
    This method take a recipe id and returns a recipe object that can be displayed in table view or in details
    */
-  static func getRecipe(_ id: String, completion: @escaping(_ result:RecipeObject?, _ error: Error?) -> Void){
+  static func getRecipe(_ ids: [String], completion: @escaping(_ result:[RecipeObject], _ error: Error?) -> Void){
     /// Create container for object to return
-    var recipe: RecipeObject?
+    var recipes: [RecipeObject] = []
   
- 
+    for id in ids {
     /// Create url to fetch recipe from id on Yummly API
     let url = Constants.GET_RECIPE_BASE_URL + id + Constants.API_KEYS
     
@@ -101,21 +100,23 @@ class RecipeApiManager {
           Alamofire.request(url).responseJSON { (response) in
             if let result = response.result.value as? [String:Any] {
               // Instantiate Recipe Objects for each results
-              recipe = RecipeObject(recipeDictionnary:result)
+              let recipe = RecipeObject(recipeDictionnary:result)
+              recipes.append(recipe)
               
             }
             // return recipe + no error
-            completion(recipe,nil)
+            completion(recipes,nil)
           }
         // Connexion error
         case .failure(let error):
           print("error: \(error.localizedDescription)")
           // send back an error to trigger an alert
-          completion(nil,error)
+          completion([],error)
         }
       })
     }
     
+  }
   }
   
 }
