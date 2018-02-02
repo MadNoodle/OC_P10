@@ -8,59 +8,80 @@
 
 import UIKit
 
-protocol RecipeFetcherDelegate  {
-  var list: [String] { get }
-}
 
 
-class HomeViewController: UIViewController, RecipeFetcherDelegate {
+class HomeViewController: UIViewController {
   
-
   /// Array to store ingredients entered by user
   var list : [String] = []
+  var ids : [String] = []
   
-  // MARK: - OUTLETS
+  
+  // //////////////// //
+  // MARK: - OUTLETS //
+  // //////////////// //
+  
+  
   @IBOutlet weak var ingrdientTable: UITableView!
   @IBOutlet weak var inputTextField: UITextField!
-
-  // MARK: - LIFECYCLE METHODS
-
+  
+  
+  // ////////////////////////// //
+  // MARK: - LIFECYCLE METHODS //
+  // ///////////////////////// //
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "HOME"
-    
     setupDelegations()
     // Register cell
     ingrdientTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
     ingrdientTable.reloadData()
-    
   }
   
-  // MARK: - ACTIONS
+  // //////////////////////// //
+  // MARK: - ACTIONS METHODS //
+  // /////////////////////// //
   @IBAction func addIngredient(_ sender: UIButton) {
     loadTextFromTextField()
   }
   
   @IBAction func clearList(_ sender: UIButton) {
-    // faire une fonction show alert pour confirmation
-    list = []
-    ingrdientTable.reloadData()
+    if list != []
+    {
+      list = []
+      ingrdientTable.reloadData()
+    } else {
+      showAlert(message: "Your list is already empty")
+    }
   }
   
   @IBAction func searchRecipes(_ sender: UIButton) {
     // instantiate controller
-     let searchResultVc = SearchResultController()
-    // set delegation
-      searchResultVc.delegate = self
-      navigationController?.pushViewController(searchResultVc, animated: true)
-    
-    
+    if list != []{
+      loadDataInTable()
+      } else {
+      showAlert(message: "Sorry i can't help you if your fridge is empty")
     }
-
-
-  // MARK: - Delegations
+  }
+  
+  func loadDataInTable() {
+    let encoded = RecipeApiManager.splitIngredients(list: list)
+    RecipeApiManager.searchRecipe(with: encoded , completion: {(recipeNames, error) in
+      if error != nil {
+        print("error")
+      }
+      self.ids = recipeNames
+      let searchResultVc = RecipeDisplayController(title: "RESULTS", ids: self.ids)
+      self.navigationController?.pushViewController(searchResultVc, animated: true)
+    })
+  }
+  
+  // ////////////////////////// //
+  // MARK: - DELEGATION METHODS //
+  // ///////////////////////// //
+  
+  
   func setupDelegations() {
-   
     // Set delegation for textField
     inputTextField.delegate = self
     // set delegation for Ingredients tableView
@@ -69,14 +90,15 @@ class HomeViewController: UIViewController, RecipeFetcherDelegate {
     
   }
   
-
-  // MARK: - Display Methods
+  // /////////////////////// //
+  // MARK: - DISPLAY METHODS //
+  // /////////////////////// //
   
   /**
    Show alert when user try to do an invalid operation
    */
-  func showAlert() {
-    let alertVC = UIAlertController(title: "Warning", message: "Empty is not an ingredient!", preferredStyle: .alert)
+  func showAlert(message: String) {
+    let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
     self.present(alertVC, animated: true, completion: nil)
   }
@@ -90,7 +112,7 @@ class HomeViewController: UIViewController, RecipeFetcherDelegate {
       inputTextField.text = ""
     }
     else {
-      showAlert()
+      showAlert(message: "nothing is not an ingredient")
     }
   }
 }

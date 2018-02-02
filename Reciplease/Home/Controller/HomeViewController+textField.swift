@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
-// MARK: - UITextFieldDelegate
+// /////////////////////////// //
+// MARK: - UITextFieldDelegate //
+// /////////////////////////// //
+
 extension HomeViewController: UITextFieldDelegate {
-  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     loadTextFromTextField()
     return (true)

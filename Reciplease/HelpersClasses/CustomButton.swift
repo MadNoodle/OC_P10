@@ -9,6 +9,7 @@
 import UIKit
 
 @IBDesignable
+
 class CustomButton: UIButton {
   @IBInspectable var fillColor: UIColor = #colorLiteral(red: 1, green: 0.5490196078, blue: 0.168627451, alpha: 1)
   @IBInspectable var cornerRadius: CGFloat = 0

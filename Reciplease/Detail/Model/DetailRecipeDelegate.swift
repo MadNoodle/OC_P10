@@ -9,9 +9,9 @@
 import Foundation
 
 protocol DetailRecipeDelegate {
-  var recipeName: String {get}
-  var recipeImage: String {get}
-  var ingredientsList: [String] {get}
-  var totalTime: String {get}
-  var servings: String {get}
+  var recipe: RecipeObject? {get}
 }
+
+
+
+
