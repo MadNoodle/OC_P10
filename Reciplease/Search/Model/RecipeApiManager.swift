@@ -33,7 +33,7 @@ class RecipeApiManager {
    - ingredients: String. Ingredients the user which to search for
    */
   static func searchRecipe(with ingredients: String, completion: @escaping(_ results:[String], _ error: Error?) -> Void) {
-    
+    print(ingredients)
     // transcode parameters to url
     
     let url = Constants.SEARCH_RECIPE_BASE_URL + ingredients

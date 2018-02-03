@@ -14,6 +14,7 @@ import CoreData
  */
 class MainTabBarController: UITabBarController {
  
+  let cdManager = CoreDataManager()
   var favRecipes : [String] = []
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
@@ -34,7 +35,7 @@ class MainTabBarController: UITabBarController {
   private func setupTabBar() {
     //Initialization of controllers
     let homeVc = HomeViewController()
-    favRecipes = CoreDataManager.loadData()
+    favRecipes = cdManager.loadData()
     let favoriteVc = FavoriteRecipeController()
     // Assign controllers to tab bar
     viewControllers = [

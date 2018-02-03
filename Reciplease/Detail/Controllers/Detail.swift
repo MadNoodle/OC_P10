@@ -21,6 +21,7 @@ class Detail: UIViewController {
   var recipe : RecipeObject?
   /// Array to store ingredients
   var ingredients: [String] = []
+  let cdManager = CoreDataManager()
   
   
   
@@ -76,7 +77,7 @@ class Detail: UIViewController {
   
   /// Check if the recipe is stored in core Data stack and display the right icon
   private func setNavBarFavImage() {
-    if (CoreDataManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (cdManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
       setupNavBar(imgName: "ic_favorites_orange")
     } else {
       setupNavBar(imgName: "ic_notification")
@@ -140,17 +141,17 @@ class Detail: UIViewController {
   /// - Parameter sender: Right NavBar item
   @objc func setFavorite(sender:UIBarButtonItem){
     // Checks if the unique id from Yummly appears in Stack
-    if (CoreDataManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (cdManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
       recipe?.isFavorite = false
-      CoreDataManager.deleteItem(recipe!)
+      cdManager.deleteItem(recipe!)
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
-      CoreDataManager.save(id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: (recipe?.totalTime)!, yield: (recipe?.yield)!, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!)
+      cdManager.save(id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: (recipe?.totalTime)!, yield: (recipe?.yield)!, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
     }
     do {
-      try CoreDataManager.context?.save()
+      try cdManager.managedObjectContext().save()
     } catch let error {
       print(error)
     }

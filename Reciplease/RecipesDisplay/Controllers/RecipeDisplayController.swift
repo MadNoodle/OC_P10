@@ -19,7 +19,6 @@ class RecipeDisplayController: UIViewController, DetailRecipeDelegate {
   
   /// DetailRecipeDelegate property
   var recipe: RecipeObject?
-  
   /// Array that contains ids fetch ingredient list
   var recipeIds : [String] = []
   /// Array that stores objects fetch from API

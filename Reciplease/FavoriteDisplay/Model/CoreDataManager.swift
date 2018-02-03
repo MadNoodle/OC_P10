@@ -15,18 +15,20 @@ import UIKit // imported to access UIApllication
  such as Creation, deletion, fetching in controllers,
  passing Favorites object between controllers
  */
-struct CoreDataManager {
+class CoreDataManager {
   
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
   
   /// Shortcut to appDelegate to access to core data context
-  static let delegate = UIApplication.shared.delegate as? AppDelegate
+  let delegate = UIApplication.shared.delegate as? AppDelegate
   /// Persistent Container context
-  static let context = delegate?.persistentContainer.viewContext
   
   
+  func managedObjectContext() -> NSManagedObjectContext {
+    return (delegate?.persistentContainer.viewContext)!
+  }
   // ///////////////////////// //
   // MARK: - GET & SET METHODS //
   // //////////////////////// //
@@ -35,7 +37,7 @@ struct CoreDataManager {
   /// This function returns all the ids from recipe stored in
   /// core data
   /// - Returns: Array of ids
-  static func loadData() -> [String] {
+  func loadData() -> [String] {
     // array to store the recipe Objects from core data
     var recipes: [Recipe] = []
     // array to strore extracted ids
@@ -44,7 +46,7 @@ struct CoreDataManager {
     let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
     do {
       recipes = (
-        try context?.fetch(request))!
+        try managedObjectContext().fetch(request))
     } catch {
       print("loading error")
     }
@@ -66,11 +68,11 @@ struct CoreDataManager {
   ///   - yield: String number of servings
   ///   - ingredients: [String] list of ingredients and quantity
   ///   - image: String url for image thumbnail
-  static func save(id: String, isFavorite: Bool, recipeName: String, totalTime: String, yield: String, ingredients: [String], image: String) {
+  func save(id: String, isFavorite: Bool, recipeName: String, totalTime: String, yield: String, ingredients: [String], image: String) {
     // summons entity
-    let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: context!)
+    let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: managedObjectContext())
     // create new entity instance
-    let recipeItem = NSManagedObject(entity: entity!, insertInto: context)
+    let recipeItem = NSManagedObject(entity: entity!, insertInto: managedObjectContext())
     
     // sets value
     recipeItem.setValue(id, forKeyPath: "id")
@@ -83,7 +85,7 @@ struct CoreDataManager {
     
     // save Context
     do {
-      try context?.save()
+      try managedObjectContext().save()
     } catch {
       print("saving error")
       
@@ -94,7 +96,7 @@ struct CoreDataManager {
   ///
   /// - Parameter recipe: Recipe you want to convert
   /// - Returns: RecipeObject
-  static func convertRecipeToObject(recipe: Recipe) -> RecipeObject {
+  func convertRecipeToObject(recipe: Recipe) -> RecipeObject {
     // Create a dictionnary from recipe value
     let favRecipeDictionnary:[String: Any] = [
       "id": recipe.id!,
@@ -119,7 +121,7 @@ struct CoreDataManager {
   ///
   /// - Parameter id: String id from object you want to check
   /// - Returns: Bool
-  static func checkIfRecipeObjectIsStored(id: String) -> Bool{
+  func checkIfRecipeObjectIsStored(id: String) -> Bool{
     let datas:[String] = loadData()
     var checkAnswer = false
     if datas.contains(id){
@@ -137,14 +139,14 @@ struct CoreDataManager {
   /// Delete an item from stack
   ///
   /// - Parameter object: RecipeObject to Delete
-  static func deleteItem(_ object: RecipeObject) {
+  func deleteItem(_ object: RecipeObject) {
     let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
     request.predicate = NSPredicate(format: "id == %@", object.id!)
     do {
-      let results = try context?.fetch(request)
+      let results = try managedObjectContext().fetch(request)
       
-      for result in results! {
-        context?.delete(result)
+      for result in results {
+        managedObjectContext().delete(result)
       }
     } catch {
       print("deleting error")
@@ -152,24 +154,24 @@ struct CoreDataManager {
   }
  
   /// Purge the stack. Can be invoked in AppDelegate to purge Core data
-  static func deleteAllItems() {
+  func deleteAllItems() {
     let datas = loadRecipe()
     for data in datas {
-      context?.delete(data)
+      managedObjectContext().delete(data)
     }
     do {
-      try context?.save()
+      try managedObjectContext().save()
     } catch {
       print("purging error")
     }
   }
   
   /// Gather all items from stack and delete them
-  static func loadRecipe() -> [Recipe] {
+  func loadRecipe() -> [Recipe] {
     var recipeItems: [Recipe] = []
     let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
     do {
-      recipeItems = (try context?.fetch(request))!
+      recipeItems = (try managedObjectContext().fetch(request))
     } catch {
       print("loading error")
     }

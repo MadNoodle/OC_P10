@@ -40,6 +40,7 @@ extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource {
     return cell
   }
 
+  // Cell heigth
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 235
   }

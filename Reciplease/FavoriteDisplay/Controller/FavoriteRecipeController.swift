@@ -24,6 +24,7 @@ class FavoriteRecipeController: UITableViewController, DetailRecipeDelegate {
   /// fetchResultController to autoupdate table view from coreData
   var fetchedResultController:NSFetchedResultsController<Recipe>!
   
+  let cdManager = CoreDataManager()
   // ///////////////////////// //
   // MARK: - LIFECYCLE METHODS //
   // ///////////////////////// //
