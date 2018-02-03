@@ -11,12 +11,14 @@ import CoreData
 
 /// This controller handles the display of detailed recipes
 class Detail: UIViewController {
+
+  
   
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
   /// delegate optionnal and should be check when called
-  var delegate: DetailRecipeDelegate?
+  var delegate: DisplayRecipeDelegate?
   /// DetailRecipeDelegate property to receive data from display Controller
   var recipe : RecipeObject?
   /// Array to store ingredients
@@ -63,8 +65,9 @@ class Detail: UIViewController {
   ///
   /// - Parameter imgName: favorite icon image
   private func setupNavBar(imgName: String){
-    // sets background image to transparent by removing image
+    // sets background image to transparent by removing image and shadow
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
     // sets tint color to white
     self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9750739932, green: 0.9750967622, blue: 0.9750844836, alpha: 1)
     // favorite icon image. Uses .alwaysOriginal rendering to override tint color if favorite is true
@@ -112,10 +115,12 @@ class Detail: UIViewController {
     // check if the delegate exists
     if delegate != nil {
       // inject values in recipes
-      recipe = delegate?.recipe
+      recipe = delegate?.didSelectARecipe()
       name.text = recipe?.recipeName
       duration.text = recipe?.totalTime
       servings.text = recipe?.yield
+      // get ingredients and load them in tableView
+      self.ingredients = (self.recipe?.ingredients)!
       // task to be done on background queue to do not slow UI display
       DispatchQueue.main.async {
       // get image Url from String
@@ -125,8 +130,7 @@ class Detail: UIViewController {
         let imageData:NSData = NSData(contentsOf: url)!
           let image = UIImage(data: imageData as Data)
           self.imageRecipe.image = image
-          // get ingredients and load them in tableView
-          self.ingredients = (self.recipe?.ingredients)!
+        
         }
       }
     }

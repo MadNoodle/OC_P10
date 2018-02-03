@@ -8,7 +8,8 @@
 
 import UIKit
 
-extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource {
+extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource, DisplayRecipeDelegate {
+  
 
   // ////////////////////////// //
   // MARK: - TABLEVIEW DELEGATE //
@@ -47,13 +48,16 @@ extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // inject values
-    recipe = recipeResults[indexPath.row]
     // Send data to detail controller
+    self.recipe = recipeResults[indexPath.row]
     let detailVc = Detail()
     detailVc.delegate = self
     // show detail controller
     navigationController?.pushViewController(detailVc, animated: true)
   }
 
+  func didSelectARecipe() -> RecipeObject {
+    return recipe!
+  }
 }
 

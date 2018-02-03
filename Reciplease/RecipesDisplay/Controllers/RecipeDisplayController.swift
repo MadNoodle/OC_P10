@@ -11,12 +11,15 @@ import CoreData
 
 /// This Controller handles the display of
 /// results fetched from web search on Yummly API
-class RecipeDisplayController: UIViewController, DetailRecipeDelegate {
+class RecipeDisplayController: UIViewController{
+
+ 
   
   // /////////////////// //
   // MARK: - PROPERTIES //
   // /////////////////// //
-  
+  /// delegate optionnal and should be check when called
+  var delegate: DisplayRecipeDelegate?
   /// DetailRecipeDelegate property
   var recipe: RecipeObject?
   /// Array that contains ids fetch ingredient list

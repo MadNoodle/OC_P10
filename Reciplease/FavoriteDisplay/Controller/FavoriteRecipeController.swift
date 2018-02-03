@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FavoriteRecipeController: UITableViewController, DetailRecipeDelegate {
+class FavoriteRecipeController: UITableViewController {
   
   // ////////////////// //
   // MARK: - PROPERTIES //

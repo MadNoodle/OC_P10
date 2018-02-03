@@ -281,6 +281,13 @@
 			path = IngredientCell;
 			sourceTree = "<group>";
 		};
+		B9A5680720265A3800C65BFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		B9B3ED2A2013A6D800E98460 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +313,7 @@
 		B9B3ED352013A6D800E98460 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				B9A5680720265A3800C65BFD /* Login */,
 				B9E733A92015EE6E00FC61AB /* MainTabBar */,
 				B9E733842015449300FC61AB /* Search */,
 				B9E733832015448500FC61AB /* RecipesDisplay */,
@@ -354,6 +362,7 @@
 		B9D864FF2016A2AB00865EE5 /* HelpersClasses */ = {
 			isa = PBXGroup;
 			children = (
+				B95FAF3E2025283000527566 /* MockCoreDataManager.swift */,
 				B9E73392201558A100FC61AB /* RecipeCell */,
 				B9A2DF102024B03200E682B4 /* IngredientCell */,
 				B9A00B7F201650960045522F /* CustomButton.swift */,
@@ -449,7 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				B97919EE201A207400686F69 /* CoreDataManager.swift */,
-				B95FAF3E2025283000527566 /* MockCoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

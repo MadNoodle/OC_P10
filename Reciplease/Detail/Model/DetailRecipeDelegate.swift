@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol DetailRecipeDelegate {
-  var recipe: RecipeObject? {get}
+protocol  DisplayRecipeDelegate {
+  func didSelectARecipe() -> RecipeObject
 }
 
 
