@@ -69,13 +69,16 @@ class Detail: UIViewController {
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
     // sets tint color to white
-    self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9750739932, green: 0.9750967622, blue: 0.9750844836, alpha: 1)
+    //self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9750739932, green: 0.9750967622, blue: 0.9750844836, alpha: 1)
     // favorite icon image. Uses .alwaysOriginal rendering to override tint color if favorite is true
     let rightButtonImage = UIImage(named: imgName)?.withRenderingMode(.alwaysOriginal)
     //  create button whith callback function
+    let shareImage = UIImage(named: "export.png")
+
     let item = UIBarButtonItem(image: rightButtonImage, style: .plain, target: self, action: #selector(self.setFavorite(sender:)))
+    let shareItem = UIBarButtonItem(image: shareImage, style: .plain, target: self, action: #selector(self.share(sender:)))
     //instantiate right barButton in navBar
-    self.navigationItem.setRightBarButton(item, animated: false)
+    self.navigationItem.rightBarButtonItems = [item,shareItem]
   }
   
   /// Check if the recipe is stored in core Data stack and display the right icon
@@ -151,7 +154,7 @@ class Detail: UIViewController {
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
-      cdManager.save(id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: (recipe?.totalTime)!, yield: (recipe?.yield)!, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!)
+      cdManager.save(id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
     }
     do {
@@ -159,6 +162,28 @@ class Detail: UIViewController {
     } catch let error {
       print(error)
     }
+  }
+  
+  /// Callback function for sharing a recipe
+  ///
+  /// - Parameter sender: shareButton
+  @objc func share(sender:UIBarButtonItem){
+    if recipe?.url != nil {
+      let recipeUrl = recipe?.url
+      let activityController = UIActivityViewController(activityItems: [recipeUrl!], applicationActivities: nil)
+    present( activityController, animated: true, completion: nil )}
+    else {
+      showAlert(message: "Sorry you cannot share this recipe")
+    }
+  }
+  
+  /**
+   Show alert when user try to do an invalid operation
+   */
+  func showAlert(message: String) {
+    let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+    self.present(alertVC, animated: true, completion: nil)
   }
   
 }

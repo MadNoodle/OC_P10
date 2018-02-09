@@ -37,7 +37,6 @@
 		B9A2DF0F2024954300E682B4 /* FavoriteRecipeController+fetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A2DF0E2024954300E682B4 /* FavoriteRecipeController+fetchResultController.swift */; };
 		B9A6EB842017F9C300134912 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9A6EB832017F9C300134912 /* Montserrat-SemiBold.otf */; };
 		B9B3ED372013A6D800E98460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B3ED362013A6D800E98460 /* AppDelegate.swift */; };
-		B9B3ED412013A6D800E98460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B3ED402013A6D800E98460 /* Assets.xcassets */; };
 		B9B3ED442013A6D800E98460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B3ED422013A6D800E98460 /* LaunchScreen.storyboard */; };
 		B9B3ED5A2013A6D800E98460 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B3ED592013A6D800E98460 /* RecipleaseUITests.swift */; };
 		B9E73387201544E400FC61AB /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73385201544E400FC61AB /* RecipeCell.swift */; };
@@ -51,6 +50,10 @@
 		B9E733A72015DD7600FC61AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E733A52015DD7600FC61AB /* HomeViewController.swift */; };
 		B9E733A82015DD7600FC61AB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E733A62015DD7600FC61AB /* HomeViewController.xib */; };
 		B9E733AB2015EE7B00FC61AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E733AA2015EE7B00FC61AB /* Extensions.swift */; };
+		B9EE59D4202D00BE00FFD609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9EE59D3202D00BE00FFD609 /* Assets.xcassets */; };
+		B9EE59D7202E239E00FFD609 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EE59D5202E239E00FFD609 /* LoginViewController.swift */; };
+		B9EE59D8202E239E00FFD609 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9EE59D6202E239E00FFD609 /* LoginViewController.xib */; };
+		B9EE59DA202E54B400FFD609 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EE59D9202E54B400FFD609 /* LoginCoordinator.swift */; };
 		DB22C05F4635A50F79DB964D /* Pods_RecipleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D269A700FF7AEB8F050FF /* Pods_RecipleaseUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +110,6 @@
 		B9A6EB832017F9C300134912 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		B9B3ED332013A6D800E98460 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B3ED362013A6D800E98460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9B3ED402013A6D800E98460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9B3ED432013A6D800E98460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9B3ED452013A6D800E98460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B3ED4A2013A6D800E98460 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,10 @@
 		B9E733A52015DD7600FC61AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B9E733A62015DD7600FC61AB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B9E733AA2015EE7B00FC61AB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B9EE59D3202D00BE00FFD609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9EE59D5202E239E00FFD609 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B9EE59D6202E239E00FFD609 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B9EE59D9202E54B400FFD609 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		D17383E4FA12B895A9ADC745 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B9E31C8DEE5F6E19884F24 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD07067476368F57FCB57E /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +290,9 @@
 		B9A5680720265A3800C65BFD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B9EE59D5202E239E00FFD609 /* LoginViewController.swift */,
+				B9EE59D6202E239E00FFD609 /* LoginViewController.xib */,
+				B9EE59D9202E54B400FFD609 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -351,9 +360,9 @@
 		B9B3ED672013A83900E98460 /* SupportingFIles */ = {
 			isa = PBXGroup;
 			children = (
+				B9EE59D3202D00BE00FFD609 /* Assets.xcassets */,
 				B97919DF2019E4F700686F69 /* Fonts */,
 				B9B3ED362013A6D800E98460 /* AppDelegate.swift */,
-				B9B3ED402013A6D800E98460 /* Assets.xcassets */,
 				B9B3ED422013A6D800E98460 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFIles;
@@ -598,10 +607,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B3ED442013A6D800E98460 /* LaunchScreen.storyboard in Resources */,
-				B9B3ED412013A6D800E98460 /* Assets.xcassets in Resources */,
 				B97919EA201A1DF200686F69 /* MainTabBar.xib in Resources */,
 				B9E7338B2015529C00FC61AB /* Montserrat-Regular.otf in Resources */,
 				B97919E12019F62C00686F69 /* RecipeDisplayView.xib in Resources */,
+				B9EE59D4202D00BE00FFD609 /* Assets.xcassets in Resources */,
+				B9EE59D8202E239E00FFD609 /* LoginViewController.xib in Resources */,
 				B9E73388201544E400FC61AB /* RecipeCell.xib in Resources */,
 				B94F62832017DEFF00C7394E /* IngredientCell.xib in Resources */,
 				B9E7338E2015536000FC61AB /* Montserrat-Medium.otf in Resources */,
@@ -637,13 +647,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reciplease-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3AA4E0FD55E740A305D2EFB7 /* [CP] Copy Pods Resources */ = {
@@ -667,9 +680,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Reciplease/Pods-Reciplease-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ILLoginKit/ILLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ILLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -742,13 +768,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecipleaseTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CF15F5343DFF0298E5D8AF24 /* [CP] Check Pods Manifest.lock */ = {
@@ -757,13 +786,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecipleaseUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -785,10 +817,12 @@
 				B94ECC8B2016A80D00557F70 /* HomeViewController+textField.swift in Sources */,
 				B9E733A72015DD7600FC61AB /* HomeViewController.swift in Sources */,
 				B94F62872017E22600C7394E /* DetailRecipeDelegate.swift in Sources */,
+				B9EE59D7202E239E00FFD609 /* LoginViewController.swift in Sources */,
 				B94F62822017DEFF00C7394E /* IngredientCell.swift in Sources */,
 				B9E73387201544E400FC61AB /* RecipeCell.swift in Sources */,
 				B9B3ED372013A6D800E98460 /* AppDelegate.swift in Sources */,
 				B97919F3201A428A00686F69 /* Reciplease.xcdatamodeld in Sources */,
+				B9EE59DA202E54B400FFD609 /* LoginCoordinator.swift in Sources */,
 				B9A00B80201650960045522F /* CustomButton.swift in Sources */,
 				B94F627E2017B98800C7394E /* Detail.swift in Sources */,
 				B9A2DF0D20248B8700E682B4 /* FavoriteRecipeController+tableView.swift in Sources */,

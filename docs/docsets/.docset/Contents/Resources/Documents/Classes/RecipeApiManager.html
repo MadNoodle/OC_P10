@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RecipeApiManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RecipeApiManager" class="dashAnchor"></a>
+    <a title="RecipeApiManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (37% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RecipeApiManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CustomButton.html">CustomButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Detail.html">Detail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FavoriteRecipeController.html">FavoriteRecipeController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IngredientCell.html">IngredientCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Recipe.html">Recipe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeCell.html">RecipeCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeObject.html">RecipeObject</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITabBarItem.html">UITabBarItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Constants.html">Constants</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RecipeApiManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RecipeApiManager</span></code></pre>
+
+                </div>
+              </div>
+            <p>Handles all communication with Yummly REST API.
+Constants such as API Key, urls, API id are stored in Constants.
+You can find the documentation here : <a href="https://developer.yummly.com/documentation">https://developer.yummly.com/documentation</a></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease16RecipeApiManagerC16splitIngredientsSSSaySSG4list_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/splitIngredients(list:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease16RecipeApiManagerC16splitIngredientsSSSaySSG4list_tFZ">splitIngredients(list:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Takes the ingredient list array and create the end point string fro FetchRequest</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">splitIngredients</span><span class="p">(</span><span class="nv">list</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>list</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>[String]</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String encoded urlFriendly</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease16RecipeApiManagerC06searchB0ySS4with_ySaySSG_s5Error_pSgtc10completiontFZ"></a>
+                    <a name="//apple_ref/swift/Method/searchRecipe(with:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease16RecipeApiManagerC06searchB0ySS4with_ySaySSG_s5Error_pSgtc10completiontFZ">searchRecipe(with:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method fetch a list of # recipe # id on Yummly according to ingredients it contains.</p>
+
+<ul>
+<li>ingredients: String. Ingredients the user which to search for</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">searchRecipe</span><span class="p">(</span><span class="n">with</span> <span class="nv">ingredients</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping(_ results:[String], _ error: Error?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease16RecipeApiManagerC03getB0ySaySSG_ySayAA0B6ObjectCGSg_s5Error_pSgtc10completiontFZ"></a>
+                    <a name="//apple_ref/swift/Method/getRecipe(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease16RecipeApiManagerC03getB0ySaySSG_ySayAA0B6ObjectCGSg_s5Error_pSgtc10completiontFZ">getRecipe(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method take a recipe id and returns a recipe object that can be displayed in table view or in details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getRecipe</span><span class="p">(</span><span class="n">_</span> <span class="nv">ids</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping(_ result:[RecipeObject]?, _ error: Error?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

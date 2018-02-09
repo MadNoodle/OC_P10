@@ -13,8 +13,9 @@ import CoreData
  This class handles the main tab bar inititailization and behaviours
  */
 class MainTabBarController: UITabBarController {
- 
+ /// Instantiate CoreDataManager
   let cdManager = CoreDataManager()
+  /// Array to store recipes
   var favRecipes : [String] = []
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {

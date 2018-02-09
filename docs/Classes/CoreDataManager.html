@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CoreDataManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CoreDataManager" class="dashAnchor"></a>
+    <a title="CoreDataManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (37% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CoreDataManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CustomButton.html">CustomButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Detail.html">Detail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FavoriteRecipeController.html">FavoriteRecipeController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IngredientCell.html">IngredientCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Recipe.html">Recipe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeCell.html">RecipeCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RecipeObject.html">RecipeObject</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITabBarItem.html">UITabBarItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Constants.html">Constants</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CoreDataManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CoreDataManager</span></code></pre>
+
+                </div>
+              </div>
+            <p>This manager handles all the actions concerning FavRecipes
+such as Creation, deletion, fetching in controllers,
+passing Favorites object between controllers</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PROPERTIES%20//"></a>
+                <a name="//apple_ref/swift/Section/PROPERTIES //" class="dashAnchor"></a>
+                <a href="#/PROPERTIES%20//">
+                  <h3 class="section-name">PROPERTIES //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC8delegateAA11AppDelegateCSgv"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC8delegateAA11AppDelegateCSgv">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shortcut to appDelegate to access to core data context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">delegate</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as?</span> <span class="kt"><a href="../Classes/AppDelegate.html">AppDelegate</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC20managedObjectContextSo09NSManagedfG0CyF"></a>
+                    <a name="//apple_ref/swift/Method/managedObjectContext()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC20managedObjectContextSo09NSManagedfG0CyF">managedObjectContext()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Persistent Container context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">managedObjectContext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSManagedObjectContext</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/GET%20&amp;%20SET%20METHODS%20//"></a>
+                <a name="//apple_ref/swift/Section/GET &amp; SET METHODS //" class="dashAnchor"></a>
+                <a href="#/GET%20&amp;%20SET%20METHODS%20//">
+                  <h3 class="section-name">GET &amp; SET METHODS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC04loadC0SaySSGyF"></a>
+                    <a name="//apple_ref/swift/Method/loadData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC04loadC0SaySSGyF">loadData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function returns all the ids from recipe stored in
+core data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array of ids</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC4saveySS2id_Sb10isFavoriteSS10recipeNameSS9totalTimeSS5yieldSaySSG11ingredientsSS5imagetF"></a>
+                    <a name="//apple_ref/swift/Method/save(id:isFavorite:recipeName:totalTime:yield:ingredients:image:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC4saveySS2id_Sb10isFavoriteSS10recipeNameSS9totalTimeSS5yieldSaySSG11ingredientsSS5imagetF">save(id:isFavorite:recipeName:totalTime:yield:ingredients:image:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Save  an object in Core Data stack</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">save</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isFavorite</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">recipeName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">totalTime</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">yield</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">ingredients</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String id of the recipe</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isFavorite</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean true if favorite</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recipeName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>totalTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String duration of the recipe preparation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>yield</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String number of servings</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ingredients</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>[String] list of ingredients and quantity</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>image</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String url for image thumbnail</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC21convertRecipeToObjectAA0fH0CAA0F0C6recipe_tF"></a>
+                    <a name="//apple_ref/swift/Method/convertRecipeToObject(recipe:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC21convertRecipeToObjectAA0fH0CAA0F0C6recipe_tF">convertRecipeToObject(recipe:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a Core Data recipe Instance to RecipeObject in order to display it in detail view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">convertRecipeToObject</span><span class="p">(</span><span class="nv">recipe</span><span class="p">:</span> <span class="kt"><a href="../Classes/Recipe.html">Recipe</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RecipeObject.html">RecipeObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recipe</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Recipe you want to convert</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>RecipeObject</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/STATUS%20METHODS%20//"></a>
+                <a name="//apple_ref/swift/Section/STATUS METHODS //" class="dashAnchor"></a>
+                <a href="#/STATUS%20METHODS%20//">
+                  <h3 class="section-name">STATUS METHODS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC27checkIfRecipeObjectIsStoredSbSS2id_tF"></a>
+                    <a name="//apple_ref/swift/Method/checkIfRecipeObjectIsStored(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC27checkIfRecipeObjectIsStoredSbSS2id_tF">checkIfRecipeObjectIsStored(id:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if an id matches a core data instance id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkIfRecipeObjectIsStored</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String id from object you want to check</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PURGING%20METHODS//"></a>
+                <a name="//apple_ref/swift/Section/PURGING METHODS//" class="dashAnchor"></a>
+                <a href="#/PURGING%20METHODS//">
+                  <h3 class="section-name">PURGING METHODS//</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC10deleteItemyAA12RecipeObjectCF"></a>
+                    <a name="//apple_ref/swift/Method/deleteItem(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10deleteItemyAA12RecipeObjectCF">deleteItem(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete an item from stack</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">deleteItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt"><a href="../Classes/RecipeObject.html">RecipeObject</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>RecipeObject to Delete</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC14deleteAllItemsyyF"></a>
+                    <a name="//apple_ref/swift/Method/deleteAllItems()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC14deleteAllItemsyyF">deleteAllItems()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Purge the stack. Can be invoked in AppDelegate to purge Core data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">deleteAllItems</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC10loadRecipeSayAA0F0CGyF"></a>
+                    <a name="//apple_ref/swift/Method/loadRecipe()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10loadRecipeSayAA0F0CGyF">loadRecipe()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gather all items from stack and delete them</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadRecipe</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/Recipe.html">Recipe</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

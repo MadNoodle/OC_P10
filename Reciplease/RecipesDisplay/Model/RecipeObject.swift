@@ -18,6 +18,7 @@ class RecipeObject {
   let ingredients: [String]?
   let totalTime: String?
   let yield: String?
+  let url: String?
 
   init(recipeDictionnary: [String:Any]){
     self.id = recipeDictionnary["id"] as? String
@@ -29,7 +30,9 @@ class RecipeObject {
     self.ingredients = recipeDictionnary["ingredientLines"] as? [String]
     self.totalTime = recipeDictionnary["totalTime"] as? String
     self.yield = recipeDictionnary["yield"] as? String
-
+    let source = recipeDictionnary["source"] as? [String:Any]
+    self.url = source?["sourceRecipeUrl"] as? String
+    
   }
 
 }

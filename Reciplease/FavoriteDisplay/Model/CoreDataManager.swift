@@ -68,7 +68,7 @@ class CoreDataManager {
   ///   - yield: String number of servings
   ///   - ingredients: [String] list of ingredients and quantity
   ///   - image: String url for image thumbnail
-  func save(id: String, isFavorite: Bool, recipeName: String, totalTime: String, yield: String, ingredients: [String], image: String) {
+  func save(id: String, isFavorite: Bool, recipeName: String, totalTime: String?, yield: String?, ingredients: [String], image: String, url: String?) {
     // summons entity
     let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: managedObjectContext())
     // create new entity instance
@@ -78,10 +78,24 @@ class CoreDataManager {
     recipeItem.setValue(id, forKeyPath: "id")
     recipeItem.setValue(isFavorite, forKeyPath: "isFavorite")
     recipeItem.setValue(recipeName, forKeyPath: "recipeName")
-    recipeItem.setValue(totalTime, forKeyPath: "totalTime")
-    recipeItem.setValue(yield, forKeyPath: "yield")
-    recipeItem.setValue(ingredients, forKeyPath: "ingredients")
     recipeItem.setValue(image, forKeyPath: "image")
+    recipeItem.setValue(ingredients, forKeyPath: "ingredients")
+    if totalTime != nil {
+      recipeItem.setValue(totalTime, forKeyPath: "totalTime")
+    } else {
+      recipeItem.setValue("", forKeyPath: "totalTime")}
+    if yield != nil {
+      recipeItem.setValue(yield, forKeyPath: "yield")
+      
+    } else {recipeItem.setValue("", forKeyPath: "yield")
+      
+    }
+    
+    
+    if url != nil {
+      recipeItem.setValue(url, forKeyPath: "url")
+      
+    } else {recipeItem.setValue("", forKeyPath: "url")}
     
     // save Context
     do {
@@ -104,8 +118,9 @@ class CoreDataManager {
       "name": recipe.recipeName!,
       "images": [["hostedLargeUrl": recipe.image!]],
       "ingredientLines": recipe.ingredients!,
-      "totalTime": recipe.totalTime!,
-      "yield": recipe.yield!
+      "totalTime": recipe.totalTime  as Any,
+      "yield": recipe.yield as Any ,
+      "url": recipe.url as Any
     ]
     // Instantiate recipe object from dictionnary
     let convertedRecipe = RecipeObject(recipeDictionnary: favRecipeDictionnary)

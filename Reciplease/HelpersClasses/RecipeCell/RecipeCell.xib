@@ -47,7 +47,7 @@
                                                 <rect key="frame" x="0.0" y="81" width="0.0" height="24"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WkV-71-tO9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="24"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_duration" translatesAutoresizingMaskIntoConstraints="NO" id="Wko-oJ-ddb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -57,7 +57,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-Mg-rdp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="24"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="182" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -70,6 +70,7 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_recipes_grey" translatesAutoresizingMaskIntoConstraints="NO" id="oYg-1D-hTZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="15" height="24"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="width" constant="15" id="Gm1-Mj-CGm"/>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="eV0-wN-1Ih"/>
                                                                 </constraints>
                                                             </imageView>
@@ -84,6 +85,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="5Hi-Q0-aO9" firstAttribute="leading" secondItem="WkV-71-tO9" secondAttribute="trailing" id="IJb-25-YV5"/>
+                                                    <constraint firstItem="5Hi-Q0-aO9" firstAttribute="leading" secondItem="fHb-h1-Lfd" secondAttribute="leading" constant="216" id="WeB-Sd-QGi"/>
                                                     <constraint firstItem="5Hi-Q0-aO9" firstAttribute="leading" secondItem="WkV-71-tO9" secondAttribute="trailing" id="vuc-U0-a9U"/>
                                                 </constraints>
                                             </stackView>
