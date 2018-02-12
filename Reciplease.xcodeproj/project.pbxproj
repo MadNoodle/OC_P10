@@ -256,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				B90BCD9E2013CB2C0054322E /* Constants.swift */,
-				B97919F1201A428900686F69 /* Reciplease.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +292,7 @@
 				B9EE59D5202E239E00FFD609 /* LoginViewController.swift */,
 				B9EE59D6202E239E00FFD609 /* LoginViewController.xib */,
 				B9EE59D9202E54B400FFD609 /* LoginCoordinator.swift */,
+				B97919EE201A207400686F69 /* CoreDataManager.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -322,6 +322,7 @@
 		B9B3ED352013A6D800E98460 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				B97919F1201A428900686F69 /* Reciplease.xcdatamodeld */,
 				B9A5680720265A3800C65BFD /* Login */,
 				B9E733A92015EE6E00FC61AB /* MainTabBar */,
 				B9E733842015449300FC61AB /* Search */,
@@ -466,7 +467,6 @@
 		B9FF49392021EEC900BDA0B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B97919EE201A207400686F69 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

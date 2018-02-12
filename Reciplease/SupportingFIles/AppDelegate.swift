@@ -15,11 +15,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
 
+  fileprivate func reset(_ cd: CoreDataManager) {
+    cd.clearUsers()
+    cd.deleteAllItems()
+    cd.createUser(name: "unknown", email: "unknown", password: "unknown")
+    let defaults = UserDefaults.standard
+    defaults.setValue("unknown",forKey: "currentUser")
+  }
+  
+  fileprivate func printUserInfo(_ cd: CoreDataManager) {
+    let datas = cd.loadUsers()
+    var index = 0
+    for data in datas {
+      print("\n--------USER \(index)----------")
+      print("USERNAME :\(data.name!)")
+      print("EMAIL :\(data.email!)")
+      print("PASSWORD :\(data.password!)")
+      print("\n")
+      index += 1
+    }
+  }
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    let cd = CoreDataManager()
     
+    // uncomment next line to reset core data and user defaults
+    //reset(cd)
+    let loginController = LoginViewController()
+   // let mainController = MainTabBarController()
     window = UIWindow(frame: UIScreen.main.bounds)
-    window!.rootViewController = LoginViewController()
+    window!.rootViewController = loginController
     window!.makeKeyAndVisible()
+   // let loginController = LoginViewController()
+   // loginController.modalPresentationStyle = .fullScreen
+    //window!.rootViewController?.present(loginController, animated: false, completion: nil)
+    printUserInfo(cd)
 
     return true
   }

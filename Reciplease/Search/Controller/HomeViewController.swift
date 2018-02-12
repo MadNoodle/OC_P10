@@ -10,12 +10,17 @@ import UIKit
 
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, userLoggedDelegate {
+  func CurrentUser() -> User {
+    return user!
+  }
+  
   
   /// Array to store ingredients entered by user
   var list : [String] = []
   var ids : [String] = []
-  
+  var delegate: userLoggedDelegate?
+  var user: User?
   
   // //////////////// //
   // MARK: - OUTLETS //
@@ -32,6 +37,7 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "HOME"
+    if delegate != nil {user = delegate?.CurrentUser()}
     setupDelegations()
     // Register cell
     ingrdientTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
@@ -72,6 +78,8 @@ class HomeViewController: UIViewController {
       }
       self.ids = recipeNames
       let searchResultVc = RecipeDisplayController(title: "RESULTS", ids: self.ids)
+      
+      searchResultVc.userDelegate = self
       self.navigationController?.pushViewController(searchResultVc, animated: true)
     })
   }
@@ -82,6 +90,7 @@ class HomeViewController: UIViewController {
   
   
   func setupDelegations() {
+
     // Set delegation for textField
     inputTextField.delegate = self
     // set delegation for Ingredients tableView

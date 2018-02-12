@@ -9,15 +9,44 @@
 import UIKit
 import CoreData
 
+
+/// Protocol to pass CurrentUser throught Controllers
+protocol userLoggedDelegate {
+  /// Current User
+  func CurrentUser() -> User
+}
+
+
+
+
+
+
 /**
  This class handles the main tab bar inititailization and behaviours
  */
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, userLoggedDelegate {
+  
+  
+  /// Delegation Method
+  func CurrentUser() -> User {
+    return userLogged!
+  }
+ 
+  // ///////////////////// //
+  // MARK: - PROPERTIES    //
+  // ///////////////////// //
+  
+  
  /// Instantiate CoreDataManager
   let cdManager = CoreDataManager()
   /// Array to store recipes
   var favRecipes : [String] = []
-  // MARK: - LIFECYCLE METHODS
+  ///  Current logged user fetched from User Defaults
+  var userLogged : User?
+  
+  // //////////////////////////// //
+  // MARK: - LIFECYCLE METHODS    //
+  // //////////////////////////// //
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTabBar()
@@ -29,7 +58,33 @@ class MainTabBarController: UITabBarController {
     tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: #colorLiteral(red: 1, green: 0.5490196078, blue: 0.168627451, alpha: 1), size: CGSize(width: (tabBar.frame.width/CGFloat(tabBar.items!.count)) / 3, height: tabBar.frame.height), lineWidth: 4.0)
   }
   
-  // MARK: - TABBAR INSTANTIATION
+  
+  
+  /// Todo: A Refactor dans model
+  private func getCurrentUser() {
+    // initialize userDefaults
+    let defaults = UserDefaults.standard
+    // grab user's email
+    let user = defaults.string(forKey: "currentUser")
+    
+    if user != nil {
+      print("LOGGED :\(user!)")
+      // fetch user from Core Data
+      userLogged = cdManager.fetchUser(email: user!)
+      cdManager.printRecipesFor(userLogged!)
+    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    setupTabBar()
+    getCurrentUser()
+   
+  }
+  
+  // //////////////////////////// //
+  // MARK: - TABBAR INSTANTIATION //
+  // //////////////////////////// //
+  
   /**
    Create programatically tab bar.
    */
@@ -38,6 +93,8 @@ class MainTabBarController: UITabBarController {
     let homeVc = HomeViewController()
     favRecipes = cdManager.loadData()
     let favoriteVc = FavoriteRecipeController()
+    favoriteVc.delegate = self
+    homeVc.delegate = self
     // Assign controllers to tab bar
     viewControllers = [
       createTabBarItem("Home", imageName: "ic_home", for: homeVc),

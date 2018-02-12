@@ -9,7 +9,12 @@
 import UIKit
 import ILLoginKit
 
+protocol LoginControllerDelegate {
+  func userDidLogin() -> String
+}
+
 class LoginViewController: UIViewController {
+ 
 
   /// login coordinator cf ILLoginKit
   lazy var loginCoordinator: LoginCoordinator = {
@@ -24,11 +29,14 @@ class LoginViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     showLogin()
   }
-  
+  override func viewDidDisappear(_ animated: Bool) {
+    
+  }
 
   
   func showLogin() {
     loginCoordinator.start()
   }
 
+ 
 }

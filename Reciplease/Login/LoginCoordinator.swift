@@ -8,9 +8,15 @@
 
 import Foundation
 import ILLoginKit
+import UIKit
+
 
 class LoginCoordinator: ILLoginKit.LoginCoordinator {
+ 
   
+  let mainVc = MainTabBarController()
+  let cdManager = CoreDataManager()
+
   override func start(){
     super.start()
     configureAppearance()
@@ -18,12 +24,13 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   
   override func finish() {
     super.finish()
+    
   }
   
   // Customize LoginKit. All properties have defaults, only set the ones you want.
   func configureAppearance() {
     // Customize the look with background & logo images
-    backgroundImage =  #imageLiteral(resourceName: "Background_Image")
+    backgroundImage =  #imageLiteral(resourceName: "splash")
 //      mainLogoImage =
 //      secondaryLogoImage =
     
@@ -45,20 +52,58 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   // Handle login via your API
   override func login(email: String, password: String) {
     print("Login with: email =\(email) password = \(password)")
+    if cdManager.logInUser(email: email, password: password){
+      setLoggedUser(email: email)
+      presentTabBarController()
+    }
   }
   
   // Handle signup via your API
   override func signup(name: String, email: String, password: String) {
-    print("Signup with: name = \(name) email =\(email) password = \(password)")
+   // print("Signup with: name = \(name) email =\(email) password = \(password)")
+    if cdManager.checkExistingUsers(email: email){
+      print("This user already exists")
+    } else {
+      cdManager.createUser(name: name, email: email, password: password)
+      setLoggedUser(email: email)
+      presentTabBarController()
+      
+    }
   }
   
   // Handle Facebook login/signup via your API
   override func enterWithFacebook(profile: FacebookProfile) {
     print("Login/Signup via Facebook with: FB profile =\(profile)")
+    // a refactor
+    let name = "\(profile.fullName)"
+    setLoggedUser(email: profile.email)
+    let email = profile.email
+    let id = profile.facebookId
+    if cdManager.checkExistingUsers(email: email){print("user exists") }
+    else {
+      cdManager.createUser(name: name, email: email, password: id)}
+    setLoggedUser(email: email)
+    presentTabBarController()
   }
   
   // Handle password recovery via your API
   override func recoverPassword(email: String) {
     print("Recover password with: email =\(email)")
   }
+  
+  func presentTabBarController(){
+    
+    let tabVc = MainTabBarController()
+    let appDelegate = UIApplication.shared.delegate
+    appDelegate?.window!?.rootViewController = tabVc
+  }
+  
+  func setLoggedUser(email:String){
+    let defaults = UserDefaults.standard
+   
+    defaults.set(email, forKey: "currentUser")
+    
+  }
+
+
 }

@@ -11,9 +11,12 @@ import CoreData
 
 /// This Controller handles the display of
 /// results fetched from web search on Yummly API
-class RecipeDisplayController: UIViewController{
+class RecipeDisplayController: UIViewController, userLoggedDelegate{
+  func CurrentUser() -> User {
+    return user!
+  }
+  
 
- 
   
   // /////////////////// //
   // MARK: - PROPERTIES //
@@ -26,7 +29,8 @@ class RecipeDisplayController: UIViewController{
   var recipeIds : [String] = []
   /// Array that stores objects fetch from API
   var recipeResults: [RecipeObject] = []
- 
+  var userDelegate:userLoggedDelegate?
+  var user:User?
   // /////////////////// //
   // MARK: - CUSTOM INIT //
   // /////////////////// //
@@ -47,6 +51,10 @@ class RecipeDisplayController: UIViewController{
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if userDelegate != nil {
+      user = userDelegate?.CurrentUser()
+    }
+    print(user)
     // setup Delegations
     tableview.delegate = self
     tableview.dataSource = self

@@ -8,30 +8,34 @@
 
 import UIKit
 
-extension FavoriteRecipeController: DisplayRecipeDelegate {
+extension FavoriteRecipeController: DisplayRecipeDelegate, userLoggedDelegate {
+  func CurrentUser() -> User {
+    return user!
+  }
+  
 
 // ////////////////////////////// //
 // MARK: - Table view data source //
 // ////////////////////////////// //
   
 override func numberOfSections(in tableView: UITableView) -> Int {
-  guard let sections = fetchedResultController.sections else {
-    return 0 }
-  return sections.count
+  return 1
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  guard let sectionInfo =
-    fetchedResultController.sections?[section] else {
-      return 0 }
-  return sectionInfo.numberOfObjects
+  if let count = fetchedResultController.sections?[0].numberOfObjects {
+    return count
+  }
+  return 0
 }
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
   let cell = Bundle.main.loadNibNamed("RecipeCell", owner: self, options: nil)?.first as! RecipeCell
-  DispatchQueue.main.async {
-    // fetch data from fetchResultController to autoUpdate
-    let favorite = self.fetchedResultController.object(at: indexPath)
+ 
+     // fetch data from fetchResultController to autoUpdate
+    let favorite = self.fetchedResultController.object(at: indexPath) 
+   
+    // populate cells
     cell.recipeName?.text =  favorite.recipeName
     cell.duration?.text = favorite.totalTime
     cell.servings?.text = favorite.yield
@@ -42,7 +46,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         let image = UIImage(data: imageData as Data)
         cell.recipeImage?.image = image
       }}
-  }
   return cell
 }
   

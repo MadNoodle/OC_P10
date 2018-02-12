@@ -12,19 +12,18 @@ import CoreData
 /// This controller handles the display of detailed recipes
 class Detail: UIViewController {
 
-  
-  
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
   /// delegate optionnal and should be check when called
   var delegate: DisplayRecipeDelegate?
+  var userDelegate: userLoggedDelegate?
+  var user : User?
   /// DetailRecipeDelegate property to receive data from display Controller
   var recipe : RecipeObject?
   /// Array to store ingredients
   var ingredients: [String] = []
   let cdManager = CoreDataManager()
-  
   
   
   // /////////////// //
@@ -43,12 +42,18 @@ class Detail: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if userDelegate != nil {
+      user = userDelegate?.CurrentUser()
+      print("USER EMAIL:\((user?.email)!)")
+    }
     receiveValueFromSearchResult()
     setNavBarFavImage()
     setupTableView()
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
+
     setNavBarFavImage()
   }
   
@@ -154,8 +159,12 @@ class Detail: UIViewController {
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
-      cdManager.save(id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
+      if user != nil
+      {
+        cdManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
+        
+      }
     }
     do {
       try cdManager.managedObjectContext().save()

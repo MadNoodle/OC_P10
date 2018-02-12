@@ -2,7 +2,7 @@
 //  Recipe+CoreDataProperties.swift
 //  
 //
-//  Created by Mathieu Janneau on 09/02/2018.
+//  Created by Mathieu Janneau on 10/02/2018.
 //
 //
 
@@ -22,7 +22,8 @@ extension Recipe {
     @NSManaged public var isFavorite: Bool
     @NSManaged public var recipeName: String?
     @NSManaged public var totalTime: String?
-    @NSManaged public var yield: String?
     @NSManaged public var url: String?
+    @NSManaged public var yield: String?
+    @NSManaged public var users: User?
 
 }

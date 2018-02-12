@@ -16,8 +16,11 @@ extension FavoriteRecipeController: NSFetchedResultsControllerDelegate {
     tableView.beginUpdates()
   }
   
+
   func controllerDidChangeContent(_ controller:
     NSFetchedResultsController<NSFetchRequestResult>) {
+   // fetchedResultController.performFetch()
+    
     tableView.endUpdates()
   }
 }

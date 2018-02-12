@@ -52,6 +52,7 @@ extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource, D
     self.recipe = recipeResults[indexPath.row]
     let detailVc = Detail()
     detailVc.delegate = self
+    detailVc.userDelegate = self
     // show detail controller
     navigationController?.pushViewController(detailVc, animated: true)
   }
