@@ -2,133 +2,63 @@
   "warnings": [
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail+tableview.swift",
-      "line": 16,
+      "line": 17,
       "symbol": "Detail.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail+tableview.swift",
-      "line": 20,
+      "line": 21,
       "symbol": "Detail.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail+tableview.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "Detail.tableView(_:heightForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 26,
-      "symbol": "Detail.cdManager",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 34,
-      "symbol": "Detail.name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 35,
-      "symbol": "Detail.imageRecipe",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 36,
-      "symbol": "Detail.ingredientsTableView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 37,
-      "symbol": "Detail.servings",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 38,
-      "symbol": "Detail.duration",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 44,
+      "line": 53,
       "symbol": "Detail.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 51,
+      "line": 65,
       "symbol": "Detail.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 55,
+      "line": 69,
       "symbol": "Detail.viewWillDisappear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Model/DetailRecipeDelegate.swift",
-      "line": 11,
-      "symbol": "DisplayRecipeDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Model/DetailRecipeDelegate.swift",
-      "line": 12,
-      "symbol": "DisplayRecipeDelegate.didSelectARecipe()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+fetchResultController.swift",
-      "line": 14,
-      "symbol": "FavoriteRecipeController.controllerWillChangeContent(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+fetchResultController.swift",
-      "line": 19,
-      "symbol": "FavoriteRecipeController.controllerDidChangeContent(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+tableView.swift",
-      "line": 17,
+      "line": 18,
       "symbol": "FavoriteRecipeController.numberOfSections(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+tableView.swift",
-      "line": 23,
+      "line": 22,
       "symbol": "FavoriteRecipeController.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+tableView.swift",
-      "line": 30,
+      "line": 29,
       "symbol": "FavoriteRecipeController.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -148,94 +78,24 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController+tableView.swift",
-      "line": 66,
-      "symbol": "FavoriteRecipeController.didSelectARecipe()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": null,
-      "symbol": "FavoriteRecipeController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": null,
-      "symbol": "FavoriteRecipeController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 12,
-      "symbol": "FavoriteRecipeController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 27,
-      "symbol": "FavoriteRecipeController.cdManager",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 32,
+      "line": 62,
       "symbol": "FavoriteRecipeController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 41,
+      "line": 81,
       "symbol": "FavoriteRecipeController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 13,
+      "line": 14,
       "symbol": "CustomButton",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 14,
-      "symbol": "CustomButton.fillColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 15,
-      "symbol": "CustomButton.cornerRadius",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 16,
-      "symbol": "CustomButton.lineColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 17,
-      "symbol": "CustomButton.lineWeigth",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/CustomButton.swift",
-      "line": 19,
-      "symbol": "CustomButton.draw(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -261,79 +121,51 @@
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 14,
+      "line": 13,
       "symbol": "RecipeCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 19,
-      "symbol": "RecipeCell.cornerRadius",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Controllers/LoginCoordinator.swift",
+      "line": 14,
+      "symbol": "LoginCoordinator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Controllers/LoginViewController.swift",
+      "line": 12,
+      "symbol": "LoginViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/UserManager.swift",
+      "line": 31,
+      "symbol": "UserManager.defaults",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 26,
-      "symbol": "RecipeCell.container",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 27,
-      "symbol": "RecipeCell.recipeImage",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 28,
-      "symbol": "RecipeCell.recipeName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 29,
-      "symbol": "RecipeCell.duration",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 30,
-      "symbol": "RecipeCell.servings",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 36,
-      "symbol": "RecipeCell.awakeFromNib()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/HelpersClasses/RecipeCell/RecipeCell.swift",
-      "line": 42,
-      "symbol": "RecipeCell.setSelected(_:animated:)",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/UserManager.swift",
+      "line": 150,
+      "symbol": "UserManager.getCurrentUser()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/MainTabBar/Controller/MainTabBarController.swift",
-      "line": 21,
+      "line": 31,
       "symbol": "MainTabBarController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/MainTabBar/Model/Constants.swift",
-      "line": 11,
-      "symbol": "Constants",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/MainTabBar/Controller/MainTabBarController.swift",
+      "line": 42,
+      "symbol": "MainTabBarController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -351,205 +183,58 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController+tableView.swift",
-      "line": 45,
-      "symbol": "RecipeDisplayController.tableView(_:heightForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController+tableView.swift",
-      "line": 49,
-      "symbol": "RecipeDisplayController.tableView(_:didSelectRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController+tableView.swift",
-      "line": 59,
-      "symbol": "RecipeDisplayController.didSelectARecipe()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController.swift",
+      "line": 30,
+      "symbol": "RecipeDisplayController.userDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController.swift",
-      "line": 34,
-      "symbol": "RecipeDisplayController.init(title:ids:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "line": 31,
+      "symbol": "RecipeDisplayController.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController.swift",
-      "line": 40,
+      "line": 81,
       "symbol": "RecipeDisplayController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Controllers/RecipeDisplayController.swift",
-      "line": 48,
+      "line": 89,
       "symbol": "RecipeDisplayController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 14,
-      "symbol": "RecipeObject.isFavorite",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 15,
-      "symbol": "RecipeObject.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 16,
-      "symbol": "RecipeObject.recipeName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 17,
-      "symbol": "RecipeObject.image",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 18,
-      "symbol": "RecipeObject.ingredients",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 19,
-      "symbol": "RecipeObject.totalTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 20,
-      "symbol": "RecipeObject.yield",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/RecipesDisplay/Model/RecipeObject.swift",
-      "line": 22,
-      "symbol": "RecipeObject.init(recipeDictionnary:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController+TableView.swift",
-      "line": 17,
+      "line": 15,
       "symbol": "HomeViewController.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController+TableView.swift",
-      "line": 21,
+      "line": 19,
       "symbol": "HomeViewController.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController+textField.swift",
-      "line": 17,
+      "line": 14,
       "symbol": "HomeViewController.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": null,
-      "symbol": "HomeViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": null,
-      "symbol": "HomeViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 13,
-      "symbol": "HomeViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 17,
-      "symbol": "HomeViewController.ids",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 25,
-      "symbol": "HomeViewController.ingrdientTable",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 26,
-      "symbol": "HomeViewController.inputTextField",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 32,
+      "line": 39,
       "symbol": "HomeViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 44,
-      "symbol": "HomeViewController.addIngredient(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 48,
-      "symbol": "HomeViewController.clearList(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 58,
-      "symbol": "HomeViewController.searchRecipes(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 67,
-      "symbol": "HomeViewController.loadDataInTable()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 84,
-      "symbol": "HomeViewController.setupDelegations()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -561,69 +246,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 15,
-      "symbol": "AppDelegate.window",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 18,
-      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 27,
-      "symbol": "AppDelegate.applicationWillResignActive(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 32,
-      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 37,
-      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 41,
-      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 45,
-      "symbol": "AppDelegate.applicationWillTerminate(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 53,
-      "symbol": "AppDelegate.persistentContainer",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/SupportingFIles/AppDelegate.swift",
-      "line": 82,
-      "symbol": "AppDelegate.saveContext()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataClass.swift",
       "line": null,
       "symbol": "Recipe",
@@ -638,59 +260,24 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 16,
-      "symbol": "Recipe.fetchRequest()",
-      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/User+CoreDataClass.swift",
+      "line": null,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 20,
-      "symbol": "Recipe.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/User+CoreDataClass.swift",
+      "line": null,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 21,
-      "symbol": "Recipe.image",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 22,
-      "symbol": "Recipe.ingredients",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 23,
-      "symbol": "Recipe.isFavorite",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 24,
-      "symbol": "Recipe.recipeName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 25,
-      "symbol": "Recipe.totalTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/Recipe+CoreDataProperties.swift",
-      "line": 26,
-      "symbol": "Recipe.yield",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/build/Reciplease.build/Release-iphoneos/Reciplease.build/DerivedSources/CoreDataGenerated/Reciplease/User+CoreDataClass.swift",
+      "line": 14,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     }
   ],

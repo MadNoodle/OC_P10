@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Handles tableView Delegation
 extension Detail : UITableViewDelegate, UITableViewDataSource{
   
   // ////////////////////////////////// //

@@ -14,7 +14,7 @@
     <a title="HomeViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (37% documented)</p>
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,15 +31,6 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CustomButton.html">CustomButton</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/Detail.html">Detail</a>
               </li>
               <li class="nav-group-task">
@@ -49,7 +40,7 @@
                 <a href="../Classes/HomeViewController.html">HomeViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/IngredientCell.html">IngredientCell</a>
+                <a href="../Classes.html#/c:@M@Reciplease@objc(cs)IngredientCell">IngredientCell</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
@@ -58,19 +49,19 @@
                 <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Recipe.html">Recipe</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RecipeCell.html">RecipeCell</a>
+                <a href="../Classes/RecipeDataManager.html">RecipeDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeObject.html">RecipeObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserManager.html">UserManager</a>
               </li>
             </ul>
           </li>
@@ -91,6 +82,9 @@
               <li class="nav-group-task">
                 <a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -109,11 +103,12 @@
             <h1>HomeViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">HomeViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">HomeViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="n"><a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>This class takes care of showing the homeViewController nested in UITabBarController
+It handles the ingredient list and searcch functionnalities</p>
 
           </section>
           <section class="section task-group-section">
@@ -159,7 +154,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Array that stores list of fetch ids for ingredient&rsquo;s search</p>
 
                       </div>
                       <div class="declaration">
@@ -167,6 +162,60 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ids</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease18HomeViewControllerC8delegateAA18userLoggedDelegate_pSgv"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease18HomeViewControllerC8delegateAA18userLoggedDelegate_pSgv">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate to receive user from MainTabBar Controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="n"><a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease18HomeViewControllerC4userAA4UserCSgv"></a>
+                    <a name="//apple_ref/swift/Property/user" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease18HomeViewControllerC4userAA4UserCSgv">user</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property that stores and the logged user</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">User</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -187,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Reciplease@objc(cs)HomeViewController(py)ingrdientTable"></a>
-                    <a name="//apple_ref/swift/Property/ingrdientTable" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)HomeViewController(py)ingrdientTable">ingrdientTable</a>
+                    <a name="/c:@M@Reciplease@objc(cs)HomeViewController(py)ingredientTable"></a>
+                    <a name="//apple_ref/swift/Property/ingredientTable" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Reciplease@objc(cs)HomeViewController(py)ingredientTable">ingredientTable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -197,14 +246,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>tableView to display ingredient picked by user</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">ingrdientTable</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">ingredientTable</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -224,7 +273,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>textField where user type ingredients to add to the list</p>
 
                       </div>
                       <div class="declaration">
@@ -232,44 +281,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">inputTextField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/LIFECYCLE%20METHODS%20//"></a>
-                <a name="//apple_ref/swift/Section/LIFECYCLE METHODS //" class="dashAnchor"></a>
-                <a href="#/LIFECYCLE%20METHODS%20//">
-                  <h3 class="section-name">LIFECYCLE METHODS //</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Reciplease@objc(cs)HomeViewController(im)viewDidLoad"></a>
-                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)HomeViewController(im)viewDidLoad">viewDidLoad()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -300,7 +311,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Add ingredient un ingredient Array and update tableView</p>
 
                       </div>
                       <div class="declaration">
@@ -310,6 +321,25 @@
                           <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">addIngredient</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -327,7 +357,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Reset ingredient List to empty and clear table view</p>
 
                       </div>
                       <div class="declaration">
@@ -337,6 +367,25 @@
                           <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">clearList</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -354,7 +403,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Search Corresponding recipe Id&rsquo;s</p>
 
                       </div>
                       <div class="declaration">
@@ -364,6 +413,25 @@
                           <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">searchRecipes</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -381,7 +449,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Perform a fetch request with ingredient List and present resultController</p>
 
                       </div>
                       <div class="declaration">
@@ -419,7 +487,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets up delegation fro textField and tableView</p>
 
                       </div>
                       <div class="declaration">
@@ -429,6 +497,37 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupDelegations</span><span class="p">()</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease18HomeViewControllerC11CurrentUserAA0F0CyF"></a>
+                    <a name="//apple_ref/swift/Method/CurrentUser()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease18HomeViewControllerC11CurrentUserAA0F0CyF">CurrentUser()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>userLoggedDelegate delegation method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="kt">CurrentUser</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">User</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>User. logged user</p>
                       </div>
                     </section>
                   </div>
@@ -500,99 +599,10 @@
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)HomeViewController(im)tableView:numberOfRowsInSection:"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)HomeViewController(im)tableView:numberOfRowsInSection:">tableView(_:numberOfRowsInSection:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)HomeViewController(im)tableView:cellForRowAtIndexPath:"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)HomeViewController(im)tableView:cellForRowAtIndexPath:">tableView(_:cellForRowAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)HomeViewController(im)textFieldShouldReturn:"></a>
-                    <a name="//apple_ref/swift/Method/textFieldShouldReturn(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)HomeViewController(im)textFieldShouldReturn:">textFieldShouldReturn(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">textFieldShouldReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

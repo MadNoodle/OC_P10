@@ -8,8 +8,8 @@
 
 import Foundation
 
+/// Stores all Api Keys and urls
 struct Constants {
-  
   
   // ///////////////////////////////// //
   // MARK: - Yummly REST API constants //

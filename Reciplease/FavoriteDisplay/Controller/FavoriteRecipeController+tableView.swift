@@ -8,11 +8,8 @@
 
 import UIKit
 
-extension FavoriteRecipeController: DisplayRecipeDelegate, userLoggedDelegate {
-  func CurrentUser() -> User {
-    return user!
-  }
-  
+/// This extensions handles tableView Delegation and send recipe to another controller
+extension FavoriteRecipeController: DisplayRecipeDelegate {
 
 // ////////////////////////////// //
 // MARK: - Table view data source //
@@ -57,7 +54,7 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   // Send data to detail controller
   let favoriteRecipe = self.fetchedResultController.object(at: indexPath)
   //Convert Recipe to recipeObject
-  recipe = cdManager.convertRecipeToObject(recipe: favoriteRecipe)
+  recipe = recipeManager.convertRecipeToObject(recipe: favoriteRecipe)
   
   // pass data thorught delegation
   let favoriteDetailVc = Detail()
@@ -65,6 +62,10 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   // show detail controller
   navigationController?.pushViewController(favoriteDetailVc, animated: true)
 }
+  
+  // /////////////////////////////////////// //
+  // MARK: - SEND RECIPE TO DETAIL DELEGATION//
+  // /////////////////////////////////////// //
   
   func didSelectARecipe() -> RecipeObject {
     return recipe!

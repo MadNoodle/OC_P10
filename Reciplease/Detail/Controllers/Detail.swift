@@ -15,25 +15,35 @@ class Detail: UIViewController {
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
-  /// delegate optionnal and should be check when called
+  
+  /// User management model
+  let userManager = UserManager()
+  /// recipe Management model
+  let recipeManager = RecipeDataManager()
+  /// delegate to receive Recipe Informations
   var delegate: DisplayRecipeDelegate?
+  /// delegate to receive logged user informations
   var userDelegate: userLoggedDelegate?
+  /// property to receive user informations
   var user : User?
   /// DetailRecipeDelegate property to receive data from display Controller
   var recipe : RecipeObject?
   /// Array to store ingredients
   var ingredients: [String] = []
-  let cdManager = CoreDataManager()
-  
+ 
   
   // /////////////// //
   // MARK: - OUTLETS //
   // /////////////// //
-  
+  /// display the recipe name
   @IBOutlet weak var name: UILabel!
+  /// display recipe thumbnail
   @IBOutlet weak var imageRecipe: UIImageView!
+  /// Display ingredient list
   @IBOutlet weak var ingredientsTableView: UITableView!
+  /// Display the number of servings
   @IBOutlet weak var servings: UILabel!
+  /// Display preparation time
   @IBOutlet weak var duration: UILabel!
   
   // ///////////////////////// //
@@ -42,9 +52,9 @@ class Detail: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    // receive logged user value
     if userDelegate != nil {
       user = userDelegate?.CurrentUser()
-      print("USER EMAIL:\((user?.email)!)")
     }
     receiveValueFromSearchResult()
     setNavBarFavImage()
@@ -53,7 +63,6 @@ class Detail: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-
     setNavBarFavImage()
   }
   
@@ -73,14 +82,12 @@ class Detail: UIViewController {
     // sets background image to transparent by removing image and shadow
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
-    // sets tint color to white
-    //self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9750739932, green: 0.9750967622, blue: 0.9750844836, alpha: 1)
+    // add favorite button
     // favorite icon image. Uses .alwaysOriginal rendering to override tint color if favorite is true
     let rightButtonImage = UIImage(named: imgName)?.withRenderingMode(.alwaysOriginal)
-    //  create button whith callback function
-    let shareImage = UIImage(named: "export.png")
-
     let item = UIBarButtonItem(image: rightButtonImage, style: .plain, target: self, action: #selector(self.setFavorite(sender:)))
+    //  add share button
+    let shareImage = UIImage(named: "export.png")
     let shareItem = UIBarButtonItem(image: shareImage, style: .plain, target: self, action: #selector(self.share(sender:)))
     //instantiate right barButton in navBar
     self.navigationItem.rightBarButtonItems = [item,shareItem]
@@ -88,9 +95,11 @@ class Detail: UIViewController {
   
   /// Check if the recipe is stored in core Data stack and display the right icon
   private func setNavBarFavImage() {
-    if (cdManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (recipeManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+      // if stored heart is orange
       setupNavBar(imgName: "ic_favorites_orange")
     } else {
+      // if not stored it s a white contour
       setupNavBar(imgName: "ic_notification")
     }
   }
@@ -153,21 +162,21 @@ class Detail: UIViewController {
   /// - Parameter sender: Right NavBar item
   @objc func setFavorite(sender:UIBarButtonItem){
     // Checks if the unique id from Yummly appears in Stack
-    if (cdManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (recipeManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
       recipe?.isFavorite = false
-      cdManager.deleteItem(recipe!)
+      recipeManager.deleteItem(recipe!)
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
       if user != nil
       {
-        cdManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
+        recipeManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
         
       }
     }
     do {
-      try cdManager.managedObjectContext().save()
+      try userManager.managedObjectContext().save()
     } catch let error {
       print(error)
     }

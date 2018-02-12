@@ -14,7 +14,7 @@
     <a title="MainTabBarController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (37% documented)</p>
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,15 +31,6 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CustomButton.html">CustomButton</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/Detail.html">Detail</a>
               </li>
               <li class="nav-group-task">
@@ -49,7 +40,7 @@
                 <a href="../Classes/HomeViewController.html">HomeViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/IngredientCell.html">IngredientCell</a>
+                <a href="../Classes.html#/c:@M@Reciplease@objc(cs)IngredientCell">IngredientCell</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
@@ -58,19 +49,19 @@
                 <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Recipe.html">Recipe</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RecipeCell.html">RecipeCell</a>
+                <a href="../Classes/RecipeDataManager.html">RecipeDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeObject.html">RecipeObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserManager.html">UserManager</a>
               </li>
             </ul>
           </li>
@@ -91,6 +82,9 @@
               <li class="nav-group-task">
                 <a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -109,7 +103,7 @@
             <h1>MainTabBarController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MainTabBarController</span><span class="p">:</span> <span class="kt">UITabBarController</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MainTabBarController</span><span class="p">:</span> <span class="kt">UITabBarController</span><span class="p">,</span> <span class="n"><a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a></span></code></pre>
 
                 </div>
               </div>
@@ -118,13 +112,20 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PROPERTIES%20%20%20%20//"></a>
+                <a name="//apple_ref/swift/Section/PROPERTIES    //" class="dashAnchor"></a>
+                <a href="#/PROPERTIES%20%20%20%20//">
+                  <h3 class="section-name">PROPERTIES    //</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease20MainTabBarControllerC9cdManagerAA08CoreDataG0Cv"></a>
-                    <a name="//apple_ref/swift/Property/cdManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease20MainTabBarControllerC9cdManagerAA08CoreDataG0Cv">cdManager</a>
+                    <a name="/s:10Reciplease20MainTabBarControllerC11userManagerAA04UserG0Cv"></a>
+                    <a name="//apple_ref/swift/Property/userManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease20MainTabBarControllerC11userManagerAA04UserG0Cv">userManager</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -132,14 +133,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Instantiate CoreDataManager</p>
+                        <p>Instantiate UserManager to grab logged user</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cdManager</span> <span class="o">=</span> <span class="kt"><a href="../Classes/CoreDataManager.html">CoreDataManager</a></span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">userManager</span> <span class="o">=</span> <span class="kt"><a href="../Classes/UserManager.html">UserManager</a></span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -173,23 +174,12 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/LIFECYCLE%20METHODS"></a>
-                <a name="//apple_ref/swift/Section/LIFECYCLE METHODS" class="dashAnchor"></a>
-                <a href="#/LIFECYCLE%20METHODS">
-                  <h3 class="section-name">LIFECYCLE METHODS</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Reciplease@objc(cs)MainTabBarController(im)viewDidLoad"></a>
-                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)MainTabBarController(im)viewDidLoad">viewDidLoad()</a>
+                    <a name="/s:10Reciplease20MainTabBarControllerC10userLoggedAA4UserCSgv"></a>
+                    <a name="//apple_ref/swift/Property/userLogged" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease20MainTabBarControllerC10userLoggedAA4UserCSgv">userLogged</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -197,14 +187,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Current logged user fetched from User Defaults</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">userLogged</span> <span class="p">:</span> <span class="kt">User</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -215,13 +205,40 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/TABBAR%20INSTANTIATION"></a>
-                <a name="//apple_ref/swift/Section/TABBAR INSTANTIATION" class="dashAnchor"></a>
-                <a href="#/TABBAR%20INSTANTIATION">
-                  <h3 class="section-name">TABBAR INSTANTIATION</h3>
+                <a name="/TABBAR%20INSTANTIATION%20//"></a>
+                <a name="//apple_ref/swift/Section/TABBAR INSTANTIATION //" class="dashAnchor"></a>
+                <a href="#/TABBAR%20INSTANTIATION%20//">
+                  <h3 class="section-name">TABBAR INSTANTIATION //</h3>
                 </a>
               </div>
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease20MainTabBarControllerC05setupcD033_2CAC52946FA4F3013D3405A14A7A3B18LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupTabBar()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease20MainTabBarControllerC05setupcD033_2CAC52946FA4F3013D3405A14A7A3B18LLyyF">setupTabBar()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create programatically tab bar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupTabBar</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -298,10 +315,48 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/DELEGATION%20METHODS%20//"></a>
+                <a name="//apple_ref/swift/Section/DELEGATION METHODS //" class="dashAnchor"></a>
+                <a href="#/DELEGATION%20METHODS%20//">
+                  <h3 class="section-name">DELEGATION METHODS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease20MainTabBarControllerC11CurrentUserAA0G0CyF"></a>
+                    <a name="//apple_ref/swift/Method/CurrentUser()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease20MainTabBarControllerC11CurrentUserAA0G0CyF">CurrentUser()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>User to send to other Controllers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="kt">CurrentUser</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">User</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

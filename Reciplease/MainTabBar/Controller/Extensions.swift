@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-
-/// These extension helps define the ToolBar custom style
-
+/// This extension helps define the ToolBar custom style by hiding text
 extension UITabBarItem {
   /// This methods allows to hide title from tab Bar items
   func tabBarItemShowingOnlyImage()  {
@@ -23,6 +21,7 @@ extension UITabBarItem {
   }
 }
 
+/// This extension helps define the ToolBar custom style by creating a colored underline
 extension UIImage {
   /// Creates an colored underline under TabBar item image
   ///

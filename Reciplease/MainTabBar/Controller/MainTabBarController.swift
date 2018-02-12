@@ -9,36 +9,17 @@
 import UIKit
 import CoreData
 
-
-/// Protocol to pass CurrentUser throught Controllers
-protocol userLoggedDelegate {
-  /// Current User
-  func CurrentUser() -> User
-}
-
-
-
-
-
-
 /**
  This class handles the main tab bar inititailization and behaviours
  */
 class MainTabBarController: UITabBarController, userLoggedDelegate {
-  
-  
-  /// Delegation Method
-  func CurrentUser() -> User {
-    return userLogged!
-  }
  
   // ///////////////////// //
   // MARK: - PROPERTIES    //
   // ///////////////////// //
   
-  
- /// Instantiate CoreDataManager
-  let cdManager = CoreDataManager()
+ /// Instantiate UserManager to grab logged user
+  let userManager = UserManager()
   /// Array to store recipes
   var favRecipes : [String] = []
   ///  Current logged user fetched from User Defaults
@@ -58,27 +39,9 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
     tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: #colorLiteral(red: 1, green: 0.5490196078, blue: 0.168627451, alpha: 1), size: CGSize(width: (tabBar.frame.width/CGFloat(tabBar.items!.count)) / 3, height: tabBar.frame.height), lineWidth: 4.0)
   }
   
-  
-  
-  /// Todo: A Refactor dans model
-  private func getCurrentUser() {
-    // initialize userDefaults
-    let defaults = UserDefaults.standard
-    // grab user's email
-    let user = defaults.string(forKey: "currentUser")
-    
-    if user != nil {
-      print("LOGGED :\(user!)")
-      // fetch user from Core Data
-      userLogged = cdManager.fetchUser(email: user!)
-      cdManager.printRecipesFor(userLogged!)
-    }
-  }
-  
   override func viewWillAppear(_ animated: Bool) {
     setupTabBar()
-    getCurrentUser()
-   
+    userLogged = userManager.getCurrentUser()
   }
   
   // //////////////////////////// //
@@ -89,9 +52,10 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
    Create programatically tab bar.
    */
   private func setupTabBar() {
+    let recipeManager = RecipeDataManager()
     //Initialization of controllers
     let homeVc = HomeViewController()
-    favRecipes = cdManager.loadData()
+    favRecipes = recipeManager.loadData()
     let favoriteVc = FavoriteRecipeController()
     favoriteVc.delegate = self
     homeVc.delegate = self
@@ -124,6 +88,15 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
     //Set icon for tab bar
     navController.tabBarItem.image = UIImage(named: imageName)
     return navController
+  }
+  
+  // ////////////////////////// //
+  // MARK: - DELEGATION METHODS //
+  // ////////////////////////// //
+  
+  /// User to send to other Controllers
+  func CurrentUser() -> User {
+    return userLogged!
   }
 }
 

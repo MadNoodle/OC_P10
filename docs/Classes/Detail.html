@@ -14,7 +14,7 @@
     <a title="Detail Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (37% documented)</p>
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,15 +31,6 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CustomButton.html">CustomButton</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/Detail.html">Detail</a>
               </li>
               <li class="nav-group-task">
@@ -49,7 +40,7 @@
                 <a href="../Classes/HomeViewController.html">HomeViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/IngredientCell.html">IngredientCell</a>
+                <a href="../Classes.html#/c:@M@Reciplease@objc(cs)IngredientCell">IngredientCell</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
@@ -58,19 +49,19 @@
                 <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Recipe.html">Recipe</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RecipeCell.html">RecipeCell</a>
+                <a href="../Classes/RecipeDataManager.html">RecipeDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeObject.html">RecipeObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserManager.html">UserManager</a>
               </li>
             </ul>
           </li>
@@ -90,6 +81,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a>
               </li>
             </ul>
           </li>
@@ -129,6 +123,60 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:10Reciplease6DetailC11userManagerAA04UserD0Cv"></a>
+                    <a name="//apple_ref/swift/Property/userManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC11userManagerAA04UserD0Cv">userManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>User management model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">userManager</span> <span class="o">=</span> <span class="kt"><a href="../Classes/UserManager.html">UserManager</a></span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC13recipeManagerAA010RecipeDataD0Cv"></a>
+                    <a name="//apple_ref/swift/Property/recipeManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC13recipeManagerAA010RecipeDataD0Cv">recipeManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>recipe Management model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">recipeManager</span> <span class="o">=</span> <span class="kt"><a href="../Classes/RecipeDataManager.html">RecipeDataManager</a></span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:10Reciplease6DetailC8delegateAA21DisplayRecipeDelegate_pSgv"></a>
                     <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
                     <a class="token" href="#/s:10Reciplease6DetailC8delegateAA21DisplayRecipeDelegate_pSgv">delegate</a>
@@ -139,7 +187,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>delegate optionnal and should be check when called</p>
+                        <p>delegate to receive Recipe Informations</p>
 
                       </div>
                       <div class="declaration">
@@ -147,6 +195,60 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DisplayRecipeDelegate.html">DisplayRecipeDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC12userDelegateAA0c6LoggedD0_pSgv"></a>
+                    <a name="//apple_ref/swift/Property/userDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC12userDelegateAA0c6LoggedD0_pSgv">userDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>delegate to receive logged user informations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">userDelegate</span><span class="p">:</span> <span class="n"><a href="../Protocols/userLoggedDelegate.html">userLoggedDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC4userAA4UserCSgv"></a>
+                    <a name="//apple_ref/swift/Property/user" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC4userAA4UserCSgv">user</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>property to receive user informations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">user</span> <span class="p">:</span> <span class="kt">User</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -207,33 +309,6 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Reciplease6DetailC9cdManagerAA08CoreDataD0Cv"></a>
-                    <a name="//apple_ref/swift/Property/cdManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease6DetailC9cdManagerAA08CoreDataD0Cv">cdManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cdManager</span> <span class="o">=</span> <span class="kt"><a href="../Classes/CoreDataManager.html">CoreDataManager</a></span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -258,7 +333,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>display the recipe name</p>
 
                       </div>
                       <div class="declaration">
@@ -285,7 +360,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>display recipe thumbnail</p>
 
                       </div>
                       <div class="declaration">
@@ -312,7 +387,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Display ingredient list</p>
 
                       </div>
                       <div class="declaration">
@@ -339,7 +414,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Display the number of servings</p>
 
                       </div>
                       <div class="declaration">
@@ -366,7 +441,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Display preparation time</p>
 
                       </div>
                       <div class="declaration">
@@ -384,98 +459,6 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/LIFECYCLE%20METHODS%20//"></a>
-                <a name="//apple_ref/swift/Section/LIFECYCLE METHODS //" class="dashAnchor"></a>
-                <a href="#/LIFECYCLE%20METHODS%20//">
-                  <h3 class="section-name">LIFECYCLE METHODS //</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Reciplease@objc(cs)Detail(im)viewDidLoad"></a>
-                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)Detail(im)viewDidLoad">viewDidLoad()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Reciplease@objc(cs)Detail(im)viewWillAppear:"></a>
-                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)Detail(im)viewWillAppear:">viewWillAppear(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Reciplease@objc(cs)Detail(im)viewWillDisappear:"></a>
-                    <a name="//apple_ref/swift/Method/viewWillDisappear(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Reciplease@objc(cs)Detail(im)viewWillDisappear:">viewWillDisappear(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
                 <a name="/UPDATE%20UI%20METHODS%20//"></a>
                 <a name="//apple_ref/swift/Section/UPDATE UI METHODS //" class="dashAnchor"></a>
                 <a href="#/UPDATE%20UI%20METHODS%20//">
@@ -483,6 +466,133 @@
                 </a>
               </div>
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC11setupNavBar33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLySS7imgName_tF"></a>
+                    <a name="//apple_ref/swift/Method/setupNavBar(imgName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC11setupNavBar33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLySS7imgName_tF">setupNavBar(imgName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate nav Bar and customize appearance</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupNavBar</span><span class="p">(</span><span class="nv">imgName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>imgName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>favorite icon image</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC17setNavBarFavImage33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setNavBarFavImage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC17setNavBarFavImage33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF">setNavBarFavImage()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if the recipe is stored in core Data stack and display the right icon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setNavBarFavImage</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC11resetNavBar33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/resetNavBar()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC11resetNavBar33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF">resetNavBar()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Methods that resets the navbar to initial paraameters when leaving controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">resetNavBar</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease6DetailC14setupTableView33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupTableView()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC14setupTableView33_3C8F2F9FBE29AFC520B8FEA77A5217F0LLyyF">setupTableView()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TableView instantiation methods</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupTableView</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -567,23 +677,12 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/TABLEVIEW%20PROTOCOL%20METHODS%20//"></a>
-                <a name="//apple_ref/swift/Section/TABLEVIEW PROTOCOL METHODS //" class="dashAnchor"></a>
-                <a href="#/TABLEVIEW%20PROTOCOL%20METHODS%20//">
-                  <h3 class="section-name">TABLEVIEW PROTOCOL METHODS //</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)Detail(im)tableView:numberOfRowsInSection:"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)Detail(im)tableView:numberOfRowsInSection:">tableView(_:numberOfRowsInSection:)</a>
+                    <a name="/c:@M@Reciplease@objc(cs)Detail(im)shareWithSender:"></a>
+                    <a name="//apple_ref/swift/Method/share(sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Reciplease@objc(cs)Detail(im)shareWithSender:">share(sender:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -591,16 +690,35 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback function for sharing a recipe</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">share</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span><span class="kt">UIBarButtonItem</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>shareButton</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -608,9 +726,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)Detail(im)tableView:cellForRowAtIndexPath:"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)Detail(im)tableView:cellForRowAtIndexPath:">tableView(_:cellForRowAt:)</a>
+                    <a name="/s:10Reciplease6DetailC9showAlertySS7message_tF"></a>
+                    <a name="//apple_ref/swift/Method/showAlert(message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease6DetailC9showAlertySS7message_tF">showAlert(message:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -618,41 +736,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Show alert when user try to do an invalid operation</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Reciplease@objc(cs)Detail(im)tableView:heightForRowAtIndexPath:"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:heightForRowAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Reciplease@objc(cs)Detail(im)tableView:heightForRowAtIndexPath:">tableView(_:heightForRowAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">showAlert</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -664,7 +755,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

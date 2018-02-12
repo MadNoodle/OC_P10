@@ -51,7 +51,7 @@ class RecipeApiManager {
           //print("Validation Successful")
           // Parse Results
           Alamofire.request(url).responseJSON { (response) in
-           
+            
             if let result = response.result.value as? [String : Any]{
               if let matches = result["matches"] as? [[String:Any]] {
                 for match in matches {
@@ -60,7 +60,7 @@ class RecipeApiManager {
                   // store them in container
                   recipeIds.append(recipeId!)
                   // get recipe for all ids matching the search
-                
+                  
                 }
                 completion(recipeIds,nil)
               }
@@ -82,43 +82,43 @@ class RecipeApiManager {
    This method take a recipe id and returns a recipe object that can be displayed in table view or in details
    */
   static func getRecipe(_ ids: [String], completion: @escaping(_ result:[RecipeObject]?, _ error: Error?) -> Void){
-   
+    
     /// Create container for object to return
     var recipes: [RecipeObject] = []
-  
-    for id in ids {
-    /// Create url to fetch recipe from id on Yummly API
-    let url = Constants.GET_RECIPE_BASE_URL + id + Constants.API_KEYS
     
-    // send tack on background
-    DispatchQueue.main.async {
-      //Connect to the REST API
-      Alamofire.request(url).validate().responseJSON(completionHandler: { response in
-        // Connexion succesful
-        switch response.result {
-        case .success:
-          //print("Validation Successful")
-          // Parse Results
-          Alamofire.request(url).responseJSON { (response) in
-            if let result = response.result.value as? [String:Any] {
-             
+    for id in ids {
+      /// Create url to fetch recipe from id on Yummly API
+      let url = Constants.GET_RECIPE_BASE_URL + id + Constants.API_KEYS
+      
+      // send tack on background
+      DispatchQueue.main.async {
+        //Connect to the REST API
+        Alamofire.request(url).validate().responseJSON(completionHandler: { response in
+          // Connexion succesful
+          switch response.result {
+          case .success:
+            //print("Validation Successful")
+            // Parse Results
+            Alamofire.request(url).responseJSON { (response) in
+              if let result = response.result.value as? [String:Any] {
+                
                 let recipe = RecipeObject(recipeDictionnary: result)
                 recipes.append(recipe)
-           
+                
+              }
+              // return recipe + no error
+              completion(recipes,nil)
             }
-            // return recipe + no error
-            completion(recipes,nil)
+          // Connexion error
+          case .failure(let error):
+            print("error: \(error.localizedDescription)")
+            // send back an error to trigger an alert
+            completion([],error)
           }
-        // Connexion error
-        case .failure(let error):
-          print("error: \(error.localizedDescription)")
-          // send back an error to trigger an alert
-          completion([],error)
-        }
-      })
+        })
+      }
+      
     }
-    
-  }
   }
   
 }

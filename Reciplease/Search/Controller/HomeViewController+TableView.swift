@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-// ///////////////////////////////////// //
-// MARK: -  TABLEVIEW DELEGATION METHODS //
-// ///////////////////////////////////// //
+/// this extension handles the tableView delegate methods
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,7 +18,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // Declare cell type
-    let cell = ingrdientTable.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+    let cell = ingredientTable.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
     //load text from Array
     cell.textLabel?.text = " - \(list[indexPath.row])"
     //Set background color

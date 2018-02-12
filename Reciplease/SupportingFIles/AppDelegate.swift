@@ -14,42 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
-  fileprivate func reset(_ cd: CoreDataManager) {
-    cd.clearUsers()
-    cd.deleteAllItems()
-    cd.createUser(name: "unknown", email: "unknown", password: "unknown")
-    let defaults = UserDefaults.standard
-    defaults.setValue("unknown",forKey: "currentUser")
-  }
-  
-  fileprivate func printUserInfo(_ cd: CoreDataManager) {
-    let datas = cd.loadUsers()
-    var index = 0
-    for data in datas {
-      print("\n--------USER \(index)----------")
-      print("USERNAME :\(data.name!)")
-      print("EMAIL :\(data.email!)")
-      print("PASSWORD :\(data.password!)")
-      print("\n")
-      index += 1
-    }
-  }
-  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    let cd = CoreDataManager()
     
     // uncomment next line to reset core data and user defaults
     //reset(cd)
+    
     let loginController = LoginViewController()
-   // let mainController = MainTabBarController()
     window = UIWindow(frame: UIScreen.main.bounds)
     window!.rootViewController = loginController
     window!.makeKeyAndVisible()
-   // let loginController = LoginViewController()
-   // loginController.modalPresentationStyle = .fullScreen
-    //window!.rootViewController?.present(loginController, animated: false, completion: nil)
-    printUserInfo(cd)
+
+    // Uncomment next line to print out the list of favorite recipe for a user
+    printUserInfo()
 
     return true
   }
@@ -123,5 +99,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
   }
 
+  // MARK: - Control Methods
+  
+  /// This methods reset the Core Data and user Defaults to empty.
+  /// this should be used when you want to purge the memory and make a clean start
+  fileprivate func reset() {
+    let cd = UserManager()
+    let recipeManager = RecipeDataManager()
+    cd.clearUsers()
+    recipeManager.deleteAllItems()
+    cd.createUser(name: "unknown", email: "unknown", password: "unknown")
+    let defaults = UserDefaults.standard
+    defaults.setValue("unknown",forKey: "currentUser")
+  }
+  
+  /// Prints a User info card in the console, printing out name, email and password
+  fileprivate func printUserInfo() {
+    let cd = UserManager()
+    let datas = cd.loadUsers()
+    var index = 0
+    for data in datas {
+      print("\n--------USER \(index)----------")
+      print("USERNAME :\(data.name!)")
+      print("EMAIL :\(data.email!)")
+      print("PASSWORD :\(data.password!)")
+      print("\n")
+      index += 1
+    }
+  }
+  
 }
 

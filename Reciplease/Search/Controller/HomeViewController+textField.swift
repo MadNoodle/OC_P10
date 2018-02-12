@@ -9,10 +9,7 @@
 import Foundation
 import UIKit
 
-// /////////////////////////// //
-// MARK: - UITextFieldDelegate //
-// /////////////////////////// //
-
+/// this extension handles the textField delegate methods
 extension HomeViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     loadTextFromTextField()

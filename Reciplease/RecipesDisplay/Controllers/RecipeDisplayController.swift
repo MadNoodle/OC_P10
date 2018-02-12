@@ -12,9 +12,7 @@ import CoreData
 /// This Controller handles the display of
 /// results fetched from web search on Yummly API
 class RecipeDisplayController: UIViewController, userLoggedDelegate{
-  func CurrentUser() -> User {
-    return user!
-  }
+
   
 
   
@@ -31,41 +29,10 @@ class RecipeDisplayController: UIViewController, userLoggedDelegate{
   var recipeResults: [RecipeObject] = []
   var userDelegate:userLoggedDelegate?
   var user:User?
-  // /////////////////// //
-  // MARK: - CUSTOM INIT //
-  // /////////////////// //
   
-  init(title: String, ids: [String]){
-    super.init(nibName: nil, bundle: nil)
-    self.title = title
-    self.recipeIds = ids
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  // ///////////////////////// //
-  // MARK: - LIFECYCLE METHODS //
-  // ///////////////////////// //
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    if userDelegate != nil {
-      user = userDelegate?.CurrentUser()
-    }
-    print(user)
-    // setup Delegations
-    tableview.delegate = self
-    tableview.dataSource = self
-    parseResults()
-    showLoader()
-  }
-  
-  // ////////////////////////////// //
-  // MARK: - UI CREATION PROPERTIES //
-  // ////////////////////////////// //
-  
+  // /////////////////////////////////////// //
+  // MARK: - UI CREATION COMPUTED PROPERTIES //
+  // /////////////////////////////////////// //
   
   /// Instantiate the background image for loader
   private var loadingBg : UIImageView = {
@@ -96,11 +63,44 @@ class RecipeDisplayController: UIViewController, userLoggedDelegate{
     return activityIndicatorView
   }()
   
+  // /////////////////// //
+  // MARK: - CUSTOM INIT //
+  // /////////////////// //
+  
+  /// Custom init that specifies navbar title and fetch recipe ids
+  ///
+  /// - Parameters:
+  ///   - title: String navbar title
+  ///   - ids: [String] List of recipe Ids
+  init(title: String, ids: [String]){
+    super.init(nibName: nil, bundle: nil)
+    self.title = title
+    self.recipeIds = ids
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  // ///////////////////////// //
+  // MARK: - LIFECYCLE METHODS //
+  // ///////////////////////// //
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // setup Delegations
+    if userDelegate != nil {
+      user = userDelegate?.CurrentUser()
+    }
+    tableview.delegate = self
+    tableview.dataSource = self
+    parseResults()
+    showLoader()
+  }
   
   // /////////////////////// //
   // MARK: - DISPLAY METHODS //
   // /////////////////////// //
-  
   
   /// Instantiate Loader
   func showLoader(){
@@ -114,10 +114,14 @@ class RecipeDisplayController: UIViewController, userLoggedDelegate{
   /// parse them, and display them in tableView
   func parseResults() {
     RecipeApiManager.getRecipe(self.recipeIds, completion: {(recipes,error) in
+      // populate recipes array with recipeObjects
       self.recipeResults = recipes!
+      // update tableView
       self.tableview.reloadData()
+      // show tableView
       self.view.addSubview(self.tableview)
       self.tableview.isHidden = false
+      // remove Lodaer
       self.loadingBg.removeFromSuperview()
     })
   }
@@ -129,5 +133,9 @@ class RecipeDisplayController: UIViewController, userLoggedDelegate{
     let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
     self.present(alertVC, animated: true, completion: nil)
+  }
+  
+  func CurrentUser() -> User {
+    return user!
   }
 }

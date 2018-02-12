@@ -8,9 +8,9 @@
 
 import UIKit
 
+/// extensions that handles tableView behavior and delegations, Display Recipe Delegations
 extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource, DisplayRecipeDelegate {
   
-
   // ////////////////////////// //
   // MARK: - TABLEVIEW DELEGATE //
   // ////////////////////////// //
@@ -41,22 +41,32 @@ extension RecipeDisplayController: UITableViewDelegate, UITableViewDataSource, D
     return cell
   }
 
-  // Cell heigth
+  /// Cell heigth defining Methods
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 235
   }
-
+  
+  /// Defines behavior when cell is selected
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // inject values
-    // Send data to detail controller
     self.recipe = recipeResults[indexPath.row]
+    // instantiate target controller
     let detailVc = Detail()
+    // send recipe delegation
     detailVc.delegate = self
+    // send logged user delegation
     detailVc.userDelegate = self
     // show detail controller
     navigationController?.pushViewController(detailVc, animated: true)
   }
 
+  // //////////////////////////// //
+  // MARK:   DELEGATION METHODS   //
+  // //////////////////////////// //
+  
+  /// Sends recipe to detail View
+  ///
+  /// - Returns: Recipe
   func didSelectARecipe() -> RecipeObject {
     return recipe!
   }

@@ -9,18 +9,18 @@
 import Foundation
 import CoreData
 
+/// This extension handles the autoUpdate of the tableView
 extension FavoriteRecipeController: NSFetchedResultsControllerDelegate {
-  
+ 
+  ///
   func controllerWillChangeContent(_ controller:
     NSFetchedResultsController<NSFetchRequestResult>) {
     tableView.beginUpdates()
   }
   
-
+  ///
   func controllerDidChangeContent(_ controller:
     NSFetchedResultsController<NSFetchRequestResult>) {
-   // fetchedResultController.performFetch()
-    
     tableView.endUpdates()
   }
 }
