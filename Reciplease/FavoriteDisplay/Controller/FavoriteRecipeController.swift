@@ -26,10 +26,9 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
   var delegate: userLoggedDelegate?
   /// User logged Account
   var user: User?
-  /// Instantiate user management functionnalities
-  let userManager = UserManager()
-  /// Instantiate recipe management functionnalities
-  let recipeManager = RecipeDataManager()
+  /// Instantiate user and recipe management functionnalities
+  let userManager = CoreDataManager()
+
   
   // ////////////////////////////// //
   // MARK: FETCH RESULTS CONTROLLER //

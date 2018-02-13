@@ -18,7 +18,7 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   // /////////////////// //
   
   /// instance of User Manager to connect to the model
-  let userManager = UserManager()
+  let userManager = CoreDataManager()
 
   override func start(){
     super.start()

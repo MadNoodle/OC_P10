@@ -8,8 +8,12 @@
 
 import XCTest
 @testable import Reciplease
+
+
+/// Test for the RecipeObject class
 class RecipeObjectTests: XCTestCase {
-    
+  
+  /// test initializer
   func testGivenADictionnary_whenUserInitARecipeObject_thenARecipeObjecctIsIntantiated(){
     let recipeDictionnary : [String:Any] = [
       "id": "recette-1",

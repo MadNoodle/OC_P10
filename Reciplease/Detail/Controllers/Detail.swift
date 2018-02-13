@@ -17,9 +17,8 @@ class Detail: UIViewController {
   // ////////////////// //
   
   /// User management model
-  let userManager = UserManager()
-  /// recipe Management model
-  let recipeManager = RecipeDataManager()
+  let userManager = CoreDataManager()
+
   /// delegate to receive Recipe Informations
   var delegate: DisplayRecipeDelegate?
   /// delegate to receive logged user informations
@@ -95,7 +94,7 @@ class Detail: UIViewController {
   
   /// Check if the recipe is stored in core Data stack and display the right icon
   private func setNavBarFavImage() {
-    if (recipeManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
       // if stored heart is orange
       setupNavBar(imgName: "ic_favorites_orange")
     } else {
@@ -162,15 +161,15 @@ class Detail: UIViewController {
   /// - Parameter sender: Right NavBar item
   @objc func setFavorite(sender:UIBarButtonItem){
     // Checks if the unique id from Yummly appears in Stack
-    if (recipeManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if (userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
       recipe?.isFavorite = false
-      recipeManager.deleteItem(recipe!)
+      userManager.deleteItem(recipe!)
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
       if user != nil
       {
-        recipeManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
+        userManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
         
       }

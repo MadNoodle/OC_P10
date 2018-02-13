@@ -30,6 +30,9 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/CoreDataManager.html">CoreDataManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Detail.html">Detail</a>
               </li>
               <li class="nav-group-task">
@@ -45,22 +48,16 @@
                 <a href="Classes/MainTabBarController.html">MainTabBarController</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MockCoreDataManager.html">MockCoreDataManager</a>
+                <a href="Classes/MockDataManager.html">MockDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/RecipeApiManager.html">RecipeApiManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/RecipeDataManager.html">RecipeDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/RecipeDisplayController.html">RecipeDisplayController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/RecipeObject.html">RecipeObject</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/UserManager.html">UserManager</a>
               </li>
             </ul>
           </li>
@@ -174,52 +171,6 @@ results fetched from web search on Yummly API</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease19MockCoreDataManagerC"></a>
-                    <a name="//apple_ref/swift/Class/MockCoreDataManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease19MockCoreDataManagerC">MockCoreDataManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Mock version of DatabaseManager for testing purposes.</p>
-
-<p>This intent of this class it to inherit all functionality from DatabaseManager
-and just override the <code>managedObjectContext()</code> function to redirect the
-the <code>NSPersistentStoreCoordinator</code> to memory instead of the actual SQLite
-model.</p>
-
-<p>This will allows us to test the functionality of the DatabaseManager
-independently without populating in real the database and without depending
-on the SQLite container.</p>
-<div class="aside aside-author">
-    <p class="aside-title">Author</p>
-    Rafael Papallas
-
-</div>
-
-                        <a href="Classes/MockCoreDataManager.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MockCoreDataManager</span><span class="p">:</span> <span class="kt"><a href="Classes/UserManager.html">UserManager</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@Reciplease@objc(cs)MainTabBarController"></a>
                     <a name="//apple_ref/swift/Class/MainTabBarController" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Reciplease@objc(cs)MainTabBarController">MainTabBarController</a>
@@ -286,9 +237,9 @@ You can find the documentation here : <a href="https://developer.yummly.com/docu
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease11UserManagerC"></a>
-                    <a name="//apple_ref/swift/Class/UserManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease11UserManagerC">UserManager</a>
+                    <a name="/s:10Reciplease15CoreDataManagerC"></a>
+                    <a name="//apple_ref/swift/Class/CoreDataManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC">CoreDataManager</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -299,13 +250,13 @@ You can find the documentation here : <a href="https://developer.yummly.com/docu
                         <p>This manager handles all the actions concerning Users
 such as Creation, deletion, fetching in controllers,</p>
 
-                        <a href="Classes/UserManager.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/CoreDataManager.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UserManager</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CoreDataManager</span></code></pre>
 
                         </div>
                       </div>
@@ -383,6 +334,52 @@ It handles the ingredient list and searcch functionnalities</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:10Reciplease15MockDataManagerC"></a>
+                    <a name="//apple_ref/swift/Class/MockDataManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15MockDataManagerC">MockDataManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mock version of DatabaseManager for testing purposes.</p>
+
+<p>This intent of this class it to inherit all functionality from DatabaseManager
+and just override the <code>managedObjectContext()</code> function to redirect the
+the <code>NSPersistentStoreCoordinator</code> to memory instead of the actual SQLite
+model.</p>
+
+<p>This will allows us to test the functionality of the DatabaseManager
+independently without populating in real the database and without depending
+on the SQLite container.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    Rafael Papallas
+
+</div>
+
+                        <a href="Classes/MockDataManager.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MockDataManager</span><span class="p">:</span> <span class="kt"><a href="Classes/CoreDataManager.html">CoreDataManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@Reciplease@objc(cs)Detail"></a>
                     <a name="//apple_ref/swift/Class/Detail" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Reciplease@objc(cs)Detail">Detail</a>
@@ -442,42 +439,10 @@ It handles the ingredient list and searcch functionnalities</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC"></a>
-                    <a name="//apple_ref/swift/Class/RecipeDataManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC">RecipeDataManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class handles all interaction with Core Data Recipe Entity such CRUD, fetching, checking</p>
-
-                        <a href="Classes/RecipeDataManager.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RecipeDataManager</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-12)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-13)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

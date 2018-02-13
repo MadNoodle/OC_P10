@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   // //////////////// //
   
   /// tableView to display ingredient picked by user
+
   @IBOutlet weak var ingredientTable: UITableView!
   /// textField where user type ingredients to add to the list
   @IBOutlet weak var inputTextField: UITextField!

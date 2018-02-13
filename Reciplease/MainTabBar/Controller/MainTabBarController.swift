@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
   // ///////////////////// //
   
  /// Instantiate UserManager to grab logged user
-  let userManager = UserManager()
+  let userManager = CoreDataManager()
   /// Array to store recipes
   var favRecipes : [String] = []
   ///  Current logged user fetched from User Defaults
@@ -52,10 +52,10 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
    Create programatically tab bar.
    */
   private func setupTabBar() {
-    let recipeManager = RecipeDataManager()
+   
     //Initialization of controllers
     let homeVc = HomeViewController()
-    favRecipes = recipeManager.loadData()
+    favRecipes = userManager.loadData()
     let favoriteVc = FavoriteRecipeController()
     favoriteVc.delegate = self
     homeVc.delegate = self

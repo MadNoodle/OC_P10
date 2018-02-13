@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RecipeDataManager Class Reference</title>
+    <title>CoreDataManager Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/RecipeDataManager" class="dashAnchor"></a>
-    <a title="RecipeDataManager Class Reference"></a>
+    <a name="//apple_ref/swift/Class/CoreDataManager" class="dashAnchor"></a>
+    <a title="CoreDataManager Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (76% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        RecipeDataManager Class Reference
+        CoreDataManager Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -30,6 +30,9 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataManager.html">CoreDataManager</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/Detail.html">Detail</a>
               </li>
@@ -46,22 +49,16 @@
                 <a href="../Classes/MainTabBarController.html">MainTabBarController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/MockCoreDataManager.html">MockCoreDataManager</a>
+                <a href="../Classes/MockDataManager.html">MockDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeApiManager.html">RecipeApiManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/RecipeDataManager.html">RecipeDataManager</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeDisplayController.html">RecipeDisplayController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RecipeObject.html">RecipeObject</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/UserManager.html">UserManager</a>
               </li>
             </ul>
           </li>
@@ -100,14 +97,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>RecipeDataManager</h1>
+            <h1>CoreDataManager</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RecipeDataManager</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CoreDataManager</span></code></pre>
 
                 </div>
               </div>
-            <p>This class handles all interaction with Core Data Recipe Entity such CRUD, fetching, checking</p>
+            <p>This manager handles all the actions concerning Users
+such as Creation, deletion, fetching in controllers,</p>
 
           </section>
           <section class="section task-group-section">
@@ -123,9 +121,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC8delegateAA11AppDelegateCSgv"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC8delegateAA11AppDelegateCSgv"></a>
                     <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC8delegateAA11AppDelegateCSgv">delegate</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC8delegateAA11AppDelegateCSgv">delegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -150,9 +148,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC20managedObjectContextSo09NSManagedfG0CyF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC20managedObjectContextSo09NSManagedfG0CyF"></a>
                     <a name="//apple_ref/swift/Method/managedObjectContext()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC20managedObjectContextSo09NSManagedfG0CyF">managedObjectContext()</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC20managedObjectContextSo09NSManagedfG0CyF">managedObjectContext()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -178,6 +176,353 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/USERS%20STORING%20//"></a>
+                <a name="//apple_ref/swift/Section/USERS STORING //" class="dashAnchor"></a>
+                <a href="#/USERS%20STORING%20//">
+                  <h3 class="section-name">USERS STORING //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC18checkExistingUsersSbSS5email_tF"></a>
+                    <a name="//apple_ref/swift/Method/checkExistingUsers(email:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC18checkExistingUsersSbSS5email_tF">checkExistingUsers(email:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if user is already registered in Core Data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkExistingUsers</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String. Email</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool. true is already registered</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC10createUserySS4name_SS5emailSS8passwordtF"></a>
+                    <a name="//apple_ref/swift/Method/createUser(name:email:password:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10createUserySS4name_SS5emailSS8passwordtF">createUser(name:email:password:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method create a new User in Managed Context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String name of the user</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String email of the user</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String password</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC9loadUsersSayAA4UserCGyF"></a>
+                    <a name="//apple_ref/swift/Method/loadUsers()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC9loadUsersSayAA4UserCGyF">loadUsers()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve users from Core Data context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadUsers</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">User</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>[User] all the user in database</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC10clearUsersyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearUsers()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10clearUsersyyF">clearUsers()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Purge User database</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">clearUsers</span> <span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC9logInUserSbSS5email_SS8passwordtF"></a>
+                    <a name="//apple_ref/swift/Method/logInUser(email:password:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC9logInUserSbSS5email_SS8passwordtF">logInUser(email:password:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validation method for login a userin</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">logInUser</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String user&rsquo;s email</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String user&rsquo;s password</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool. true if granted</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC9fetchUserAA0F0CSS5email_tF"></a>
+                    <a name="//apple_ref/swift/Method/fetchUser(email:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC9fetchUserAA0F0CSS5email_tF">fetchUser(email:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Find user with the entered email in User Database</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">fetchUser</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">User</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String email to search</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>User. user stored in Core Data</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Reciplease15CoreDataManagerC13setLoggedUserySS5email_tF"></a>
+                    <a name="//apple_ref/swift/Method/setLoggedUser(email:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC13setLoggedUserySS5email_tF">setLoggedUser(email:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Store logged user in User defaults to retrieve it when calling new rootViewController</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setLoggedUser</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/CREATE%20//"></a>
                 <a name="//apple_ref/swift/Section/CREATE //" class="dashAnchor"></a>
                 <a href="#/CREATE%20//">
@@ -188,9 +533,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC04saveB0yAA4UserC4user_SS2idSb10isFavoriteSS10recipeNameSSSg9totalTimeAK5yieldSaySSG11ingredientsSS5imageAK3urltF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC10saveRecipeyAA4UserC4user_SS2idSb10isFavoriteSS10recipeNameSSSg9totalTimeAK5yieldSaySSG11ingredientsSS5imageAK3urltF"></a>
                     <a name="//apple_ref/swift/Method/saveRecipe(user:id:isFavorite:recipeName:totalTime:yield:ingredients:image:url:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC04saveB0yAA4UserC4user_SS2idSb10isFavoriteSS10recipeNameSSSg9totalTimeAK5yieldSaySSG11ingredientsSS5imageAK3urltF">saveRecipe(user:id:isFavorite:recipeName:totalTime:yield:ingredients:image:url:)</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10saveRecipeyAA4UserC4user_SS2idSb10isFavoriteSS10recipeNameSSSg9totalTimeAK5yieldSaySSG11ingredientsSS5imageAK3urltF">saveRecipe(user:id:isFavorite:recipeName:totalTime:yield:ingredients:image:url:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -317,9 +662,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC04loadC0SaySSGyF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC04loadC0SaySSGyF"></a>
                     <a name="//apple_ref/swift/Method/loadData()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC04loadC0SaySSGyF">loadData()</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC04loadC0SaySSGyF">loadData()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -349,9 +694,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC04loadB0SayAA0B0CGyF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC10loadRecipeSayAA0F0CGyF"></a>
                     <a name="//apple_ref/swift/Method/loadRecipe()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC04loadB0SayAA0B0CGyF">loadRecipe()</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10loadRecipeSayAA0F0CGyF">loadRecipe()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -381,9 +726,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC07convertB8ToObjectAA0bG0CAA0B0C6recipe_tF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC21convertRecipeToObjectAA0fH0CAA0F0C6recipe_tF"></a>
                     <a name="//apple_ref/swift/Method/convertRecipeToObject(recipe:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC07convertB8ToObjectAA0bG0CAA0B0C6recipe_tF">convertRecipeToObject(recipe:)</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC21convertRecipeToObjectAA0fH0CAA0F0C6recipe_tF">convertRecipeToObject(recipe:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -442,9 +787,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC10deleteItemyAA0B6ObjectCF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC10deleteItemyAA12RecipeObjectCF"></a>
                     <a name="//apple_ref/swift/Method/deleteItem(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC10deleteItemyAA0B6ObjectCF">deleteItem(_:)</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC10deleteItemyAA12RecipeObjectCF">deleteItem(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -488,9 +833,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC14deleteAllItemsyyF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC14deleteAllItemsyyF"></a>
                     <a name="//apple_ref/swift/Method/deleteAllItems()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC14deleteAllItemsyyF">deleteAllItems()</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC14deleteAllItemsyyF">deleteAllItems()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -526,9 +871,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC07checkIfB14ObjectIsStoredSbSS2id_tF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC27checkIfRecipeObjectIsStoredSbSS2id_tF"></a>
                     <a name="//apple_ref/swift/Method/checkIfRecipeObjectIsStored(id:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC07checkIfB14ObjectIsStoredSbSS2id_tF">checkIfRecipeObjectIsStored(id:)</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC27checkIfRecipeObjectIsStoredSbSS2id_tF">checkIfRecipeObjectIsStored(id:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -576,9 +921,9 @@ core data</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Reciplease17RecipeDataManagerC15printRecipesForyAA4UserCF"></a>
+                    <a name="/s:10Reciplease15CoreDataManagerC15printRecipesForyAA4UserCF"></a>
                     <a name="//apple_ref/swift/Method/printRecipesFor(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Reciplease17RecipeDataManagerC15printRecipesForyAA4UserCF">printRecipesFor(_:)</a>
+                    <a class="token" href="#/s:10Reciplease15CoreDataManagerC15printRecipesForyAA4UserCF">printRecipesFor(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -624,7 +969,7 @@ core data</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-12)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-13)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

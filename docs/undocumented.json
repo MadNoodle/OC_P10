@@ -23,21 +23,21 @@
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 53,
+      "line": 52,
       "symbol": "Detail.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 65,
+      "line": 64,
       "symbol": "Detail.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Detail/Controllers/Detail.swift",
-      "line": 69,
+      "line": 68,
       "symbol": "Detail.viewWillDisappear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -79,14 +79,14 @@
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 62,
+      "line": 61,
       "symbol": "FavoriteRecipeController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/FavoriteDisplay/Controller/FavoriteRecipeController.swift",
-      "line": 81,
+      "line": 80,
       "symbol": "FavoriteRecipeController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -141,16 +141,16 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/UserManager.swift",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/CoreDataManager.swift",
       "line": 31,
-      "symbol": "UserManager.defaults",
+      "symbol": "CoreDataManager.defaults",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/UserManager.swift",
-      "line": 150,
-      "symbol": "UserManager.getCurrentUser()",
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Login/Model/CoreDataManager.swift",
+      "line": 149,
+      "symbol": "CoreDataManager.getCurrentUser()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -233,7 +233,7 @@
     },
     {
       "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P10/Reciplease/Search/Controller/HomeViewController.swift",
-      "line": 39,
+      "line": 40,
       "symbol": "HomeViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

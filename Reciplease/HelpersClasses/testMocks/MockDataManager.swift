@@ -1,4 +1,15 @@
 //
+//  MockRecipeManager.swift
+//  Reciplease
+//
+//  Created by Mathieu Janneau on 12/02/2018.
+//  Copyright © 2018 Mathieu Janneau. All rights reserved.
+//
+
+import Foundation
+
+
+//
 //  MockCoreDataManager.swift
 //  Reciplease
 //
@@ -23,7 +34,7 @@ import CoreData
 /// on the SQLite container.
 ///
 /// - Author: Rafael Papallas
-class MockCoreDataManager: UserManager{
+class MockDataManager: CoreDataManager{
   
   /// Returns a `NSManagedObjectContext` linking to memory instead of SQLite
   override func managedObjectContext() -> NSManagedObjectContext {
@@ -71,3 +82,4 @@ class MockCoreDataManager: UserManager{
     return coordinator
   }()
 }
+

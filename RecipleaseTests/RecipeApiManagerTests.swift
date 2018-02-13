@@ -19,7 +19,7 @@ class RecipeApiManagerTests: XCTestCase {
     
   }
   
-  /// Test function searchRecipe
+  /// Test function searchRecipe()
   func testGivenAnEncodedListIsEntered_whenUserSearch_thenListOfIdisReturned() {
     let ex = expectation(description: "returns a list of strings")
     let ingredients = ["onion","ham"]
@@ -38,7 +38,7 @@ class RecipeApiManagerTests: XCTestCase {
     }
   }
 
-  /// Test function searchRecipe Error
+  /// Test function searchRecipe() Error
   func testGivenAnInvalidListIsEntered_whenUserSearch_thenErrorIsReturned() {
     let ex = expectation(description: "returns an error")
     let ingredients = ["onioefvqsvcqvfds   n","hadfsqfdsqfqsm"]

@@ -20,7 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Reciplease" customModuleProvider="target">
             <connections>
-                <outlet property="ingrdientTable" destination="fYJ-91-FhC" id="6c7-zS-Lx1"/>
+                <outlet property="ingredientTable" destination="fYJ-91-FhC" id="hlz-vw-dDJ"/>
                 <outlet property="inputTextField" destination="gtR-vQ-Y3Y" id="6Cg-dA-iCH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

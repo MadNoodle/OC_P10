@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     // uncomment next line to reset core data and user defaults
-    //reset(cd)
+    //reset()
     
     let loginController = LoginViewController()
     window = UIWindow(frame: UIScreen.main.bounds)
@@ -104,10 +104,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   /// This methods reset the Core Data and user Defaults to empty.
   /// this should be used when you want to purge the memory and make a clean start
   fileprivate func reset() {
-    let cd = UserManager()
-    let recipeManager = RecipeDataManager()
+    let cd = CoreDataManager()
+   
     cd.clearUsers()
-    recipeManager.deleteAllItems()
+    cd.deleteAllItems()
     cd.createUser(name: "unknown", email: "unknown", password: "unknown")
     let defaults = UserDefaults.standard
     defaults.setValue("unknown",forKey: "currentUser")
@@ -115,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   /// Prints a User info card in the console, printing out name, email and password
   fileprivate func printUserInfo() {
-    let cd = UserManager()
+    let cd = CoreDataManager()
     let datas = cd.loadUsers()
     var index = 0
     for data in datas {

@@ -54,7 +54,7 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   // Send data to detail controller
   let favoriteRecipe = self.fetchedResultController.object(at: indexPath)
   //Convert Recipe to recipeObject
-  recipe = recipeManager.convertRecipeToObject(recipe: favoriteRecipe)
+  recipe = userManager.convertRecipeToObject(recipe: favoriteRecipe)
   
   // pass data thorught delegation
   let favoriteDetailVc = Detail()
