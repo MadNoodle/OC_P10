@@ -58,27 +58,32 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
   // MARK: - LIFECYCLE METHODS //
   // ///////////////////////// //
   
-    override func viewDidLoad() {
+  fileprivate func loadRecipes() {
+    // receive logged user from MainTabBarController
+    if delegate != nil {
+      user = delegate?.CurrentUser()
+    }
+    // fetchDataFromStack(email:(user?.email)!)
+    do{
+      // fetch data from CoreData
+      try fetchedResultController.performFetch()
+    } catch let error as NSError {
+      print("Fetching error: \(error), \(error.userInfo)")
+    }
+  }
+  
+  override func viewDidLoad() {
       super.viewDidLoad()
       self.title = "FAVORITES"
-      // receive logged user from MainTabBarController
-      if delegate != nil {
-        user = delegate?.CurrentUser()
-      }
-      // fetchDataFromStack(email:(user?.email)!)
-      do{
-        // fetch data from CoreData
-        try fetchedResultController.performFetch()
-      } catch let error as NSError {
-        print("Fetching error: \(error), \(error.userInfo)")
-      }
+      loadRecipes()
       // Register custom Cell
       tableView.register(RecipeCell.self, forCellReuseIdentifier: "myCell")
       tableView.reloadData()
     }
 
   override func viewWillAppear(_ animated: Bool) {
-    tableView.reloadData()
+    
+    //tableView.reloadData()
   }
   
   // ///////////////////////// //

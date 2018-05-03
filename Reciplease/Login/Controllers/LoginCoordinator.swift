@@ -20,33 +20,33 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   /// instance of User Manager to connect to the model
   let userManager = CoreDataManager()
 
-  override func start(){
+  override func start(animated: Bool = true){
     super.start()
     configureAppearance()
   }
   
-  override func finish() {
+  override func finish(animated: Bool = true) {
     super.finish()
   }
   
   /// Customize LoginKit. All properties have defaults, only set the ones you want.
   func configureAppearance() {
     // Customize the look with background & logo images
-    backgroundImage =  #imageLiteral(resourceName: "splash")
+    configuration.backgroundImage =  #imageLiteral(resourceName: "splash")
       // Change colors
-    tintColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219.0/255.0, alpha: 1)
-    errorTintColor = UIColor(red: 253.0/255.0, green: 227.0/255.0, blue: 167.0/255.0, alpha: 1)
+    configuration.tintColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219.0/255.0, alpha: 1)
+   configuration.errorTintColor = UIColor(red: 253.0/255.0, green: 227.0/255.0, blue: 167.0/255.0, alpha: 1)
     
     // Change placeholder & button texts, useful for different marketing style or language.
-    loginButtonText = "Sign In"
-    signupButtonText = "Create Account"
-    facebookButtonText = "Login with Facebook"
-    forgotPasswordButtonText = "Forgot password?"
-    recoverPasswordButtonText = "Recover"
-    namePlaceholder = "Name"
-    emailPlaceholder = "E-Mail"
-    passwordPlaceholder = "Password!"
-    repeatPasswordPlaceholder = "Confirm password!"
+    configuration.loginButtonText = "Sign In"
+    configuration.signupButtonText = "Create Account"
+    configuration.facebookButtonText = "Login with Facebook"
+    configuration.forgotPasswordButtonText = "Forgot password?"
+    configuration.recoverPasswordButtonText = "Recover"
+    configuration.namePlaceholder = "Name"
+    configuration.emailPlaceholder = "E-Mail"
+    configuration.passwordPlaceholder = "Password!"
+    configuration.repeatPasswordPlaceholder = "Confirm password!"
   }
   
   // ////////////////////////// //

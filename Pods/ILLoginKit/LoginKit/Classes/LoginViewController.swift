@@ -9,23 +9,23 @@
 import UIKit
 import Validator
 
-protocol LoginViewControllerDelegate: class {
+public protocol LoginViewControllerDelegate: AnyObject {
 
     func didSelectLogin(_ viewController: UIViewController, email: String, password: String)
-
     func didSelectForgotPassword(_ viewController: UIViewController)
-
     func loginDidSelectBack(_ viewController: UIViewController)
 
 }
 
-class LoginViewController: UIViewController, BackgroundMovable, KeyboardMovable {
+open class LoginViewController: UIViewController, BackgroundMovable, KeyboardMovable {
 
     // MARK: - Properties
 
-    weak var delegate: LoginViewControllerDelegate?
+    public weak var delegate: LoginViewControllerDelegate?
 
-    weak var configurationSource: ConfigurationSource?
+	public lazy var configuration: ConfigurationSource = {
+		return DefaultConfiguration()
+	}()
 
     var loginAttempted = false
 
@@ -58,60 +58,57 @@ class LoginViewController: UIViewController, BackgroundMovable, KeyboardMovable 
 
     // MARK: - UIViewController
 
-    override func viewDidLoad() {
+	override open func viewDidLoad() {
         super.viewDidLoad()
-        
+		_ = loadFonts
         setupValidation()
         initKeyboardMover()
         initBackgroundMover()
         customizeAppearance()
     }
 
-    override func loadView() {
-        self.view = viewFromNib()
+	override open func loadView() {
+        self.view = viewFromNib(optionalName: "LoginViewController")
     }
 
-    override func didReceiveMemoryWarning() {
+	override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+	override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         destroyKeyboardMover()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+	override open var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
     // MARK: - Setup
 
     func customizeAppearance() {
-        configureFromSource()
+        applyConfiguration()
         setupFonts()
     }
 
-    func configureFromSource() {
-        guard let config = configurationSource else {
-            return
-        }
+    func applyConfiguration() {
+        backgroundImageView.image = configuration.backgroundImage
+		backgroundImageView.gradientType = configuration.backgroundImageGradient ? .normalGradient : .none
+        backgroundImageView.gradientColor = configuration.tintColor
+        backgroundImageView.fadeColor = configuration.tintColor
+        logoImageView.image = configuration.secondaryLogoImage
 
-        backgroundImageView.image = config.backgroundImage
-        backgroundImageView.gradientColor = config.tintColor
-        backgroundImageView.fadeColor = config.tintColor
-        logoImageView.image = config.secondaryLogoImage
+        emailTextField.placeholder = configuration.emailPlaceholder
+        emailTextField.errorColor = configuration.errorTintColor
+        passwordTextField.placeholder = configuration.passwordPlaceholder
+        passwordTextField.errorColor = configuration.errorTintColor
 
-        emailTextField.placeholder = config.emailPlaceholder
-        emailTextField.errorColor = config.errorTintColor
-        passwordTextField.placeholder = config.passwordPlaceholder
-        passwordTextField.errorColor = config.errorTintColor
+        loginButton.setTitle(configuration.loginButtonText, for: .normal)
+        loginButton.setTitleColor(configuration.tintColor, for: .normal)
+        forgotPasswordButton.isHidden = !configuration.shouldShowForgotPassword
+        forgotPasswordButton.setTitle(configuration.forgotPasswordButtonText, for: .normal)
 
-        loginButton.setTitle(config.loginButtonText, for: .normal)
-        loginButton.setTitleColor(config.tintColor, for: .normal)
-        forgotPasswordButton.isHidden = !config.shouldShowForgotPassword
-        forgotPasswordButton.setTitle(config.forgotPasswordButtonText, for: .normal)
-
-        stackViewHeight.constant = config.shouldShowForgotPassword ? 200 : 125
+        stackViewHeight.constant = configuration.shouldShowForgotPassword ? 200 : 125
     }
 
     func setupFonts() {
@@ -202,22 +199,23 @@ extension LoginViewController {
 
 extension LoginViewController : UITextFieldDelegate {
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+	public func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedField = textField
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+	public func textFieldDidEndEditing(_ textField: UITextField) {
         selectedField = nil
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+	public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+
         let nextTag = textField.tag + 1
         let nextResponder = view.viewWithTag(nextTag) as UIResponder!
 
         if nextResponder != nil {
             nextResponder?.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
             didSelectLogin(self)
         }
         

@@ -8,9 +8,10 @@
 
 import Foundation
 
-protocol ConfigurationSource: class {
+public protocol ConfigurationSource {
 
     var backgroundImage: UIImage { get }
+	var backgroundImageGradient: Bool { get }
     var mainLogoImage: UIImage { get }
     var secondaryLogoImage: UIImage { get }
 
@@ -28,11 +29,82 @@ protocol ConfigurationSource: class {
     var repeatPasswordPlaceholder: String { get }
     var namePlaceholder: String { get }
 
-    var shouldShowForgotPassword: Bool { get }
+	var shouldShowSignupButton: Bool { get }
+	var shouldShowLoginButton: Bool { get }
+	var shouldShowFacebookButton: Bool { get }
+	var shouldShowForgotPassword: Bool { get }
 
 }
 
-open class LoginCoordinator: ConfigurationSource {
+public struct DefaultConfiguration: ConfigurationSource {
+
+	public var backgroundImage: UIImage
+	public var backgroundImageGradient: Bool
+	public var mainLogoImage: UIImage
+	public var secondaryLogoImage: UIImage
+
+	public var tintColor: UIColor
+	public var errorTintColor: UIColor
+
+	public var signupButtonText: String
+	public var loginButtonText: String
+	public var facebookButtonText: String
+	public var forgotPasswordButtonText: String
+	public var recoverPasswordButtonText: String
+
+	public var emailPlaceholder: String
+	public var passwordPlaceholder: String
+	public var repeatPasswordPlaceholder: String
+	public var namePlaceholder: String
+
+	public var shouldShowSignupButton: Bool
+	public var shouldShowLoginButton: Bool
+	public var shouldShowFacebookButton: Bool
+	public var shouldShowForgotPassword: Bool
+
+	public init(backgroundImage: UIImage = UIImage(),
+		 backgroundImageGradient: Bool = true,
+		 mainLogoImage: UIImage = UIImage(),
+		 secondaryLogoImage: UIImage = UIImage(),
+		 tintColor: UIColor = UIColor(red: 185.0 / 255.0, green: 117.0 / 255.0, blue: 216.0 / 255.0, alpha: 1),
+		 errorTintColor: UIColor = UIColor(red: 241 / 255, green: 196 / 255 , blue: 15 / 255, alpha: 1),
+		 signupButtonText: String = "Sign Up",
+		 loginButtonText: String = "Log In",
+		 facebookButtonText: String = "Enter with Facebook",
+		 forgotPasswordButtonText: String = "Forgot Password",
+		 recoverPasswordButtonText: String = "Recover Password",
+		 emailPlaceholder: String = "Email",
+		 passwordPlaceholder: String = "Password",
+		 repeatPasswordPlaceholder: String = "Repeat Password",
+		 namePlaceholder: String = "Full Name",
+		 shouldShowSignupButton: Bool = true,
+		 shouldShowLoginButton: Bool = true,
+		 shouldShowFacebookButton: Bool = true,
+		 shouldShowForgotPassword: Bool = true) {
+		self.backgroundImage = backgroundImage
+		self.backgroundImageGradient = backgroundImageGradient
+		self.mainLogoImage = mainLogoImage
+		self.secondaryLogoImage = secondaryLogoImage
+		self.tintColor = tintColor
+		self.errorTintColor = errorTintColor
+		self.signupButtonText = signupButtonText
+		self.loginButtonText = loginButtonText
+		self.facebookButtonText = facebookButtonText
+		self.forgotPasswordButtonText = forgotPasswordButtonText
+		self.recoverPasswordButtonText = recoverPasswordButtonText
+		self.emailPlaceholder = emailPlaceholder
+		self.passwordPlaceholder = passwordPlaceholder
+		self.repeatPasswordPlaceholder = repeatPasswordPlaceholder
+		self.namePlaceholder = namePlaceholder
+		self.shouldShowSignupButton = shouldShowSignupButton
+		self.shouldShowLoginButton = shouldShowLoginButton
+		self.shouldShowFacebookButton = shouldShowFacebookButton
+		self.shouldShowForgotPassword = shouldShowForgotPassword
+	}
+
+}
+
+open class LoginCoordinator {
 
     // MARK: - Properties
 
@@ -40,37 +112,7 @@ open class LoginCoordinator: ConfigurationSource {
 
     public let rootViewController: UIViewController?
 
-    // MARK: Public Configuration
-
-    public var backgroundImage = UIImage()
-
-    public var mainLogoImage = UIImage()
-
-    public var secondaryLogoImage = UIImage()
-
-    public var tintColor = UIColor(red: 185.0 / 255.0, green: 117.0 / 255.0, blue: 216.0 / 255.0, alpha: 1)
-
-    public var errorTintColor = UIColor(red: 241 / 255, green: 196 / 255 , blue: 15 / 255, alpha: 1)
-
-    public var signupButtonText = "Sign Up"
-
-    public var loginButtonText = "Log In"
-
-    public var facebookButtonText = "Enter with Facebook"
-
-    public var forgotPasswordButtonText = "Forgot Password"
-
-    public var recoverPasswordButtonText = "Recover Password"
-
-    public var emailPlaceholder = "Email"
-
-    public var passwordPlaceholder = "Password"
-
-    public var repeatPasswordPlaceholder = "Repeat Password"
-
-    public var namePlaceholder = "Full Name"
-
-    public var shouldShowForgotPassword = true
+	public var configuration = DefaultConfiguration()
 
     // MARK: Private
 
@@ -90,7 +132,7 @@ open class LoginCoordinator: ConfigurationSource {
         if _initialViewController == nil {
             let viewController = InitialViewController()
             viewController.delegate = self
-            viewController.configurationSource = self
+            viewController.configuration = configuration
             _initialViewController = viewController
         }
         return _initialViewController!
@@ -101,7 +143,7 @@ open class LoginCoordinator: ConfigurationSource {
         if _loginViewController == nil {
             let viewController = LoginViewController()
             viewController.delegate = self
-            viewController.configurationSource = self
+			viewController.configuration = configuration
             _loginViewController = viewController
         }
         return _loginViewController!
@@ -112,7 +154,7 @@ open class LoginCoordinator: ConfigurationSource {
         if _signupViewController == nil {
             let viewController = SignupViewController()
             viewController.delegate = self
-            viewController.configurationSource = self
+			viewController.configuration = configuration
             _signupViewController = viewController
         }
         return _signupViewController!
@@ -123,7 +165,7 @@ open class LoginCoordinator: ConfigurationSource {
         if _passwordViewController == nil {
             let viewController = PasswordViewController()
             viewController.delegate = self
-            viewController.configurationSource = self
+			viewController.configuration = configuration
             _passwordViewController = viewController
         }
         return _passwordViewController!
@@ -146,18 +188,18 @@ open class LoginCoordinator: ConfigurationSource {
         self.rootViewController = nil
     }
 
-    open func start() {
+    open func start(animated: Bool = true) {
         if let rootViewController = rootViewController {
-            rootViewController.present(navigationController, animated: true, completion: nil)
+            rootViewController.present(navigationController, animated: animated, completion: nil)
         } else if let window = window {
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
     }
 
-    open func finish() {
+    open func finish(animated: Bool = true) {
         if let rootViewController = rootViewController {
-            rootViewController.dismiss(animated: true, completion: nil)
+            rootViewController.dismiss(animated: animated, completion: nil)
         }
         
         _navigationController = nil
@@ -240,15 +282,15 @@ extension LoginCoordinator: InitialViewControllerDelegate {
 
 extension LoginCoordinator: LoginViewControllerDelegate {
 
-    func didSelectLogin(_ viewController: UIViewController, email: String, password: String) {
+	public func didSelectLogin(_ viewController: UIViewController, email: String, password: String) {
         login(email: email, password: password)
     }
 
-    func didSelectForgotPassword(_ viewController: UIViewController) {
+	public func didSelectForgotPassword(_ viewController: UIViewController) {
         goToPassword()
     }
 
-    func loginDidSelectBack(_ viewController: UIViewController) {
+	public func loginDidSelectBack(_ viewController: UIViewController) {
         pop()
         _loginViewController = nil
     }
@@ -256,11 +298,11 @@ extension LoginCoordinator: LoginViewControllerDelegate {
 
 extension LoginCoordinator: SignupViewControllerDelegate {
 
-    func didSelectSignup(_ viewController: UIViewController, email: String, name: String, password: String) {
+    public func didSelectSignup(_ viewController: UIViewController, email: String, name: String, password: String) {
         signup(name: name, email: email, password: password)
     }
 
-    func signupDidSelectBack(_ viewController: UIViewController) {
+    public func signupDidSelectBack(_ viewController: UIViewController) {
         pop()
         _signupViewController = nil
     }
@@ -269,11 +311,11 @@ extension LoginCoordinator: SignupViewControllerDelegate {
 
 extension LoginCoordinator: PasswordViewControllerDelegate {
 
-    func didSelectRecover(_ viewController: UIViewController, email: String) {
+    public func didSelectRecover(_ viewController: UIViewController, email: String) {
         recoverPassword(email: email)
     }
 
-    func passwordDidSelectBack(_ viewController: UIViewController) {
+    public func passwordDidSelectBack(_ viewController: UIViewController) {
         pop()
         _passwordViewController = nil
     }

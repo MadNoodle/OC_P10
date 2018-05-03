@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.makeKeyAndVisible()
 
     // Uncomment next line to print out the list of favorite recipe for a user
-    printUserInfo()
+    //printUserInfo()
 
     return true
   }

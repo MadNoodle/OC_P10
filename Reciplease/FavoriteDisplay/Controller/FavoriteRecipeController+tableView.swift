@@ -20,10 +20,9 @@ override func numberOfSections(in tableView: UITableView) -> Int {
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  if let count = fetchedResultController.sections?[0].numberOfObjects {
+  guard let count = fetchedResultController.sections?[0].numberOfObjects else { return 0}
     return count
-  }
-  return 0
+  
 }
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +61,7 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   // show detail controller
   navigationController?.pushViewController(favoriteDetailVc, animated: true)
 }
+  
   
   // /////////////////////////////////////// //
   // MARK: - SEND RECIPE TO DETAIL DELEGATION//

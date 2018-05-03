@@ -9,21 +9,22 @@
 import UIKit
 import Validator
 
-protocol SignupViewControllerDelegate: class {
+public protocol SignupViewControllerDelegate: class {
 
     func didSelectSignup(_ viewController: UIViewController, email: String, name: String, password: String)
-
     func signupDidSelectBack(_ viewController: UIViewController)
 
 }
 
-class SignupViewController: UIViewController, KeyboardMovable, BackgroundMovable {
+open class SignupViewController: UIViewController, KeyboardMovable, BackgroundMovable {
 
     // MARK: - Properties
 
     weak var delegate: SignupViewControllerDelegate?
 
-    weak var configurationSource: ConfigurationSource?
+	lazy var configuration: ConfigurationSource = {
+		return DefaultConfiguration()
+	}()
 
     var signupAttempted = false
 
@@ -50,77 +51,67 @@ class SignupViewController: UIViewController, KeyboardMovable, BackgroundMovable
     // MARK: Outlet's
 
     @IBOutlet var fields: [SkyFloatingLabelTextField]!
-
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
-
     @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
-
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
-
     @IBOutlet weak var repeatPasswordTextField: SkyFloatingLabelTextField!
-
     @IBOutlet weak var backgroundImageView: GradientImageView!
-
     @IBOutlet weak var logoImageView: UIImageView!
-
     @IBOutlet weak var signupButton: Buttn!
 
     // MARK: - UIViewController
 
-    override func viewDidLoad() {
+	override open func viewDidLoad() {
         super.viewDidLoad()
-
+		_ = loadFonts
         setupValidation()
         initKeyboardMover()
         initBackgroundMover()
         customizeAppearance()
     }
 
-    override func loadView() {
-        self.view = viewFromNib()
+	override open func loadView() {
+        self.view = viewFromNib(optionalName: "SignupViewController")
     }
 
-    override func didReceiveMemoryWarning() {
+	override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+	override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         destroyKeyboardMover()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+	override open var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
     // MARK: - Setup
 
     func customizeAppearance() {
-        configureFromSource()
+        applyConfiguration()
         setupFonts()
     }
     
-    func configureFromSource() {
-        guard let config = configurationSource else {
-            return
-        }
+    func applyConfiguration() {
+        view.backgroundColor = configuration.tintColor
+        signupButton.setTitle(configuration.signupButtonText, for: .normal)
 
-        view.backgroundColor = config.tintColor
-        signupButton.setTitle(config.signupButtonText, for: .normal)
+        backgroundImageView.image = configuration.backgroundImage
+		backgroundImageView.gradientType = configuration.backgroundImageGradient ? .normalGradient : .none
+        backgroundImageView.gradientColor = configuration.tintColor
+        backgroundImageView.fadeColor = configuration.tintColor
+        logoImageView.image = configuration.secondaryLogoImage
 
-        backgroundImageView.image = config.backgroundImage
-        backgroundImageView.gradientColor = config.tintColor
-        backgroundImageView.fadeColor = config.tintColor
-        logoImageView.image = config.secondaryLogoImage
-
-        emailTextField.placeholder = config.emailPlaceholder
-        emailTextField.errorColor = config.errorTintColor
-        nameTextField.placeholder = config.namePlaceholder
-        nameTextField.errorColor = config.errorTintColor
-        passwordTextField.placeholder = config.passwordPlaceholder
-        passwordTextField.errorColor = config.errorTintColor
-        repeatPasswordTextField.placeholder = config.repeatPasswordPlaceholder
-        repeatPasswordTextField.errorColor = config.errorTintColor
+        emailTextField.placeholder = configuration.emailPlaceholder
+        emailTextField.errorColor = configuration.errorTintColor
+        nameTextField.placeholder = configuration.namePlaceholder
+        nameTextField.errorColor = configuration.errorTintColor
+        passwordTextField.placeholder = configuration.passwordPlaceholder
+        passwordTextField.errorColor = configuration.errorTintColor
+        repeatPasswordTextField.placeholder = configuration.repeatPasswordPlaceholder
+        repeatPasswordTextField.errorColor = configuration.errorTintColor
     }
 
     func setupFonts() {
@@ -138,10 +129,7 @@ class SignupViewController: UIViewController, KeyboardMovable, BackgroundMovable
     }
 
     @IBAction func didSelectSignup(_ sender: AnyObject) {
-        guard let email = emailTextField.text,
-            let name = nameTextField.text,
-            let password = passwordTextField.text
-            else {
+        guard let email = emailTextField.text, let name = nameTextField.text, let password = passwordTextField.text else {
             return
         }
 
@@ -222,22 +210,23 @@ extension SignupViewController {
 
 extension SignupViewController : UITextFieldDelegate {
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedField = textField
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         selectedField = nil
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+
         let nextTag = textField.tag + 1
         let nextResponder = view.viewWithTag(nextTag) as UIResponder!
 
         if nextResponder != nil {
             nextResponder?.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
             didSelectSignup(self)
         }
         

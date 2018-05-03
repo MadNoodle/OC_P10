@@ -11,9 +11,7 @@ import UIKit
 protocol InitialViewControllerDelegate: class {
 
     func didSelectSignup(_ viewController: UIViewController)
-
     func didSelectLogin(_ viewController: UIViewController)
-
     func didSelectFacebook(_ viewController: UIViewController)
 
 }
@@ -24,40 +22,35 @@ class InitialViewController: UIViewController, BackgroundMovable {
 
     weak var delegate: InitialViewControllerDelegate?
 
-    weak var configurationSource: ConfigurationSource?
+	lazy var configuration: ConfigurationSource = {
+		return DefaultConfiguration()
+	}()
 
     // MARK: Background Movable
 
     var movableBackground: UIView {
-        get {
-            return backgroundImageView
-        }
+		return backgroundImageView
     }
 
     // MARK: Outlet's
 
     @IBOutlet weak var logoImageView: UIImageView!
-
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    
+    @IBOutlet weak var backgroundImageView: GradientImageView!
     @IBOutlet weak var signupButton: Buttn!
-
     @IBOutlet weak var loginButton: Buttn!
-
     @IBOutlet weak var facebookButton: UIButton!
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         _ = loadFonts
         initBackgroundMover()
         customizeAppearance()
     }
 
     override func loadView() {
-        self.view = viewFromNib()
+        view = viewFromNib()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,31 +64,39 @@ class InitialViewController: UIViewController, BackgroundMovable {
     // MARK: - Setup
 
     func customizeAppearance() {
-        configureFromSource()
+        applyConfiguration()
         setupFonts()
         addShadows()
-
         navigationController?.isNavigationBarHidden = true
         navigationController?.delegate = self
     }
 
-    func configureFromSource() {
-        guard let config = configurationSource else {
-            return
-        }
+    func applyConfiguration() {
+        backgroundImageView.image = configuration.backgroundImage
+		backgroundImageView.gradientType = configuration.backgroundImageGradient ? .normalGradient : .none
+        logoImageView.image = configuration.mainLogoImage
 
-        backgroundImageView.image = config.backgroundImage
-        logoImageView.image = config.mainLogoImage
+		if configuration.shouldShowSignupButton {
+			signupButton.setTitle(configuration.signupButtonText, for: .normal)
+			signupButton.setTitleColor(configuration.tintColor, for: .normal)
+			signupButton.borderColor = configuration.tintColor.withAlphaComponent(0.25)
+		} else {
+			signupButton.isHidden = true
+		}
 
-        signupButton.setTitle(config.signupButtonText, for: .normal)
-        signupButton.setTitleColor(config.tintColor, for: .normal)
-        signupButton.borderColor = config.tintColor.withAlphaComponent(0.25)
+		if configuration.shouldShowLoginButton {
+			loginButton.setTitle(configuration.loginButtonText, for: .normal)
+			loginButton.setTitleColor(configuration.tintColor, for: .normal)
+			loginButton.borderColor = configuration.tintColor.withAlphaComponent(0.25)
+		} else {
+			loginButton.isHidden = true
+		}
 
-        loginButton.setTitle(config.loginButtonText, for: .normal)
-        loginButton.setTitleColor(config.tintColor, for: .normal)
-        loginButton.borderColor = config.tintColor.withAlphaComponent(0.25)
-        
-        facebookButton.setTitle(config.facebookButtonText, for: .normal)
+		if configuration.shouldShowFacebookButton {
+			facebookButton.setTitle(configuration.facebookButtonText, for: .normal)
+		} else {
+			facebookButton.isHidden = true
+		}
     }
 
     func setupFonts() {

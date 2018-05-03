@@ -177,7 +177,7 @@ class Detail: UIViewController {
     do {
       try userManager.managedObjectContext().save()
     } catch let error {
-      print(error)
+      print("Error: \(error)")
     }
   }
   

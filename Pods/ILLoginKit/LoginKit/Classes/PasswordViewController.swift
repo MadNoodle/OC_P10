@@ -9,21 +9,22 @@
 import UIKit
 import Validator
 
-protocol PasswordViewControllerDelegate: class {
+public protocol PasswordViewControllerDelegate: class {
 
     func didSelectRecover(_ viewController: UIViewController, email: String)
-
     func passwordDidSelectBack(_ viewController: UIViewController)
 
 }
 
-class PasswordViewController: UIViewController, BackgroundMovable, KeyboardMovable {
+open class PasswordViewController: UIViewController, BackgroundMovable, KeyboardMovable {
 
     // MARK: - Properties
 
     weak var delegate: PasswordViewControllerDelegate?
 
-    weak var configurationSource: ConfigurationSource?
+	lazy var configuration: ConfigurationSource = {
+		return DefaultConfiguration()
+	}()
 
     var recoverAttempted = false
 
@@ -44,54 +45,49 @@ class PasswordViewController: UIViewController, BackgroundMovable, KeyboardMovab
     // MARK: Outlet's
 
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
-
     @IBOutlet weak var recoverButton: Buttn!
-
     @IBOutlet weak var logoImageView: UIImageView!
-
     @IBOutlet weak var backgroundImageView: GradientImageView!
 
     // MARK: - UIViewController
 
-    override func viewDidLoad() {
+	override open func viewDidLoad() {
         super.viewDidLoad()
+		_ = loadFonts
         initBackgroundMover()
         customizeAppearance()
         setupValidation()
     }
 
-    override func loadView() {
-        self.view = viewFromNib()
+	override open func loadView() {
+        self.view = viewFromNib(optionalName: "PasswordViewController")
     }
 
-    override func didReceiveMemoryWarning() {
+	override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+	override open var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
     // MARK: - Setup
 
     func customizeAppearance() {
-        configureFromSource()
+        applyConfiguration()
         setupFonts()
     }
 
-    func configureFromSource() {
-        guard let config = configurationSource else {
-            return
-        }
+    func applyConfiguration() {
+        backgroundImageView.image = configuration.backgroundImage
+		backgroundImageView.gradientType = configuration.backgroundImageGradient ? .normalGradient : .none
+        backgroundImageView.gradientColor = configuration.tintColor
+        backgroundImageView.fadeColor = configuration.tintColor
+        logoImageView.image = configuration.secondaryLogoImage
 
-        backgroundImageView.image = config.backgroundImage
-        backgroundImageView.gradientColor = config.tintColor
-        backgroundImageView.fadeColor = config.tintColor
-        logoImageView.image = config.secondaryLogoImage
-
-        emailTextField.placeholder = config.emailPlaceholder
-        emailTextField.errorColor = config.errorTintColor
-        recoverButton.setTitle(config.recoverPasswordButtonText, for: .normal)
+        emailTextField.placeholder = configuration.emailPlaceholder
+        emailTextField.errorColor = configuration.errorTintColor
+        recoverButton.setTitle(configuration.recoverPasswordButtonText, for: .normal)
     }
 
     func setupFonts() {
@@ -171,22 +167,23 @@ extension PasswordViewController {
 
 extension PasswordViewController: UITextFieldDelegate {
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+	public func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedField = textField
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         selectedField = nil
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+
         let nextTag = textField.tag + 1
         let nextResponder = view.viewWithTag(nextTag) as UIResponder!
 
         if nextResponder != nil {
             nextResponder?.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
             didSelectRecover(self)
         }
 
