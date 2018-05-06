@@ -26,23 +26,23 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  let cell = Bundle.main.loadNibNamed("RecipeCell", owner: self, options: nil)?.first as! RecipeCell
+  let cell = Bundle.main.loadNibNamed("RecipeCell", owner: self, options: nil)?.first as? RecipeCell
  
      // fetch data from fetchResultController to autoUpdate
     let favorite = self.fetchedResultController.object(at: indexPath) 
    
     // populate cells
-    cell.recipeName?.text =  favorite.recipeName
-    cell.duration?.text = favorite.totalTime
-    cell.servings?.text = favorite.yield
-    if let url = URL(string:favorite.image!){
-      let imageData:NSData = NSData(contentsOf: url)!
+  cell?.recipeName?.text =  favorite.recipeName
+    cell?.duration?.text = favorite.totalTime
+    cell?.servings?.text = favorite.yield
+    if let url = URL(string: favorite.image!) {
+      let imageData: NSData = NSData(contentsOf: url)!
       
       DispatchQueue.main.async {
         let image = UIImage(data: imageData as Data)
-        cell.recipeImage?.image = image
+        cell?.recipeImage?.image = image
       }}
-  return cell
+  return cell!
 }
   
 override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,7 +62,6 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   navigationController?.pushViewController(favoriteDetailVc, animated: true)
 }
   
-  
   // /////////////////////////////////////// //
   // MARK: - SEND RECIPE TO DETAIL DELEGATION//
   // /////////////////////////////////////// //
@@ -71,7 +70,3 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
     return recipe!
   }
 }
-
-
-
-

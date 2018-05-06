@@ -32,7 +32,7 @@ class RecipeApiManager {
    - parameters:
    - ingredients: String. Ingredients the user which to search for
    */
-  static func searchRecipe(with ingredients: String, completion: @escaping(_ results:[String], _ error: Error?) -> Void) {
+  static func searchRecipe(with ingredients: String, completion: @escaping(_ results: [String], _ error: Error?) -> Void) {
     print(ingredients)
     // transcode parameters to url
     
@@ -52,8 +52,8 @@ class RecipeApiManager {
           // Parse Results
           Alamofire.request(url).responseJSON { (response) in
             
-            if let result = response.result.value as? [String : Any]{
-              if let matches = result["matches"] as? [[String:Any]] {
+            if let result = response.result.value as? [String: Any] {
+              if let matches = result["matches"] as? [[String: Any]] {
                 for match in matches {
                   // Parsed ids
                   let recipeId = match["id"] as? String
@@ -62,7 +62,7 @@ class RecipeApiManager {
                   // get recipe for all ids matching the search
                   
                 }
-                completion(recipeIds,nil)
+                completion(recipeIds, nil)
               }
             }
             
@@ -81,7 +81,7 @@ class RecipeApiManager {
   /**
    This method take a recipe id and returns a recipe object that can be displayed in table view or in details
    */
-  static func getRecipe(_ ids: [String], completion: @escaping(_ result:[RecipeObject]?, _ error: Error?) -> Void){
+  static func getRecipe(_ ids: [String], completion: @escaping(_ result: [RecipeObject]?, _ error: Error?) -> Void) {
     
     /// Create container for object to return
     var recipes: [RecipeObject] = []
@@ -100,20 +100,20 @@ class RecipeApiManager {
             //print("Validation Successful")
             // Parse Results
             Alamofire.request(url).responseJSON { (response) in
-              if let result = response.result.value as? [String:Any] {
+              if let result = response.result.value as? [String: Any] {
                 
                 let recipe = RecipeObject(recipeDictionnary: result)
                 recipes.append(recipe)
                 
               }
               // return recipe + no error
-              completion(recipes,nil)
+              completion(recipes, nil)
             }
           // Connexion error
           case .failure(let error):
             print("error: \(error.localizedDescription)")
             // send back an error to trigger an alert
-            completion([],error)
+            completion([], error)
           }
         })
       }

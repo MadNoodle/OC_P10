@@ -9,10 +9,8 @@
 import UIKit
 import CoreData
 
-
 /// This ccontroller handles Communication and display for user's favorites recipes
 class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
-  
   
   // ////////////////// //
   // MARK: - PROPERTIES //
@@ -23,17 +21,15 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
   /// DetailRecipeDelegate property
   var recipe: RecipeObject?
   /// Delegate to pass User Data from Login Controller
-  var delegate: userLoggedDelegate?
+  weak var delegate: userLoggedDelegate?
   /// User logged Account
   var user: User?
   /// Instantiate user and recipe management functionnalities
   let userManager = CoreDataManager()
 
-  
   // ////////////////////////////// //
   // MARK: FETCH RESULTS CONTROLLER //
   // ////////////////////////////// //
-  
   
   ///  call the Core Data to fetch favorite recipes
   lazy var fetchedResultController: NSFetchedResultsController<Recipe> = {
@@ -52,8 +48,6 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
     return frc
   }()
  
-  
- 
   // ///////////////////////// //
   // MARK: - LIFECYCLE METHODS //
   // ///////////////////////// //
@@ -64,7 +58,7 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
       user = delegate?.CurrentUser()
     }
     // fetchDataFromStack(email:(user?.email)!)
-    do{
+    do {
       // fetch data from CoreData
       try fetchedResultController.performFetch()
     } catch let error as NSError {
@@ -94,5 +88,3 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
     return user!
   }
 }
-
-

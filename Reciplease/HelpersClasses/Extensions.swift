@@ -12,9 +12,9 @@ import UIKit
 /// This extension helps define the ToolBar custom style by hiding text
 extension UITabBarItem {
   /// This methods allows to hide title from tab Bar items
-  func tabBarItemShowingOnlyImage()  {
+  func tabBarItemShowingOnlyImage() {
     // offset to center
-    self.imageInsets = UIEdgeInsets(top:6,left:0,bottom:-6,right:0)
+    self.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
     // displace to hide
     self.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 30000)
     
@@ -33,10 +33,9 @@ extension UIImage {
   func createSelectionIndicator(color: UIColor, size: CGSize, lineWidth: CGFloat) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(size, false, 0)
     color.setFill()
-    UIRectFill(CGRect(origin: CGPoint(x: 0,y :size.height - lineWidth), size: CGSize(width: size.width, height: lineWidth)))
+    UIRectFill(CGRect(origin: CGPoint(x: 0, y: size.height - lineWidth), size: CGSize(width: size.width, height: lineWidth)))
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return image!
   }
 }
-

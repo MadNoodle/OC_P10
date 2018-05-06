@@ -23,9 +23,9 @@ class CoreDataManagerTests: XCTestCase {
     // Grab user from coreData
     let user = mockData.fetchUser(email: "mail")
     // Save recipes
-    mockData.saveRecipe(user: user,id: "recipe-1", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion","ham"], image: "image.jpg", url: "http://test.com")
-    mockData.saveRecipe(user: user,id: "recipe-2", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion","ham"], image: "image.jpg", url: "http://test.com")
-    mockData.saveRecipe(user: user,id: "recipe-3", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion","ham"], image: "image.jpg", url: "http://test.com")
+    mockData.saveRecipe(user: user, id: "recipe-1", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion", "ham"], image: "image.jpg", url: "http://test.com")
+    mockData.saveRecipe(user: user, id: "recipe-2", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion", "ham"], image: "image.jpg", url: "http://test.com")
+    mockData.saveRecipe(user: user, id: "recipe-3", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion", "ham"], image: "image.jpg", url: "http://test.com")
   }
   
   /// Create 1 recipe
@@ -35,11 +35,11 @@ class CoreDataManagerTests: XCTestCase {
      // Grab user from coreData
     let user = mockData.fetchUser(email: "mail")
     // Save recipes
-    mockData.saveRecipe(user: user,id: "recipe-1", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion","ham"], image: "image.jpg", url: "http://test.com")
+    mockData.saveRecipe(user: user, id: "recipe-1", isFavorite: true, recipeName: "recipe", totalTime: "1h15", yield: "4 persons", ingredients: ["onion", "ham"], image: "image.jpg", url: "http://test.com")
   }
   
   /// Test saveRecipe() function
-  func testGivenAnEmptyCoreDataStack_whenUserSaveAnRecipe_thenCoredataIsAdded(){
+  func testGivenAnEmptyCoreDataStack_whenUserSaveAnRecipe_thenCoredataIsAdded() {
     var data: [Recipe]?
     // create recipe
     setupSingleItem()
@@ -60,7 +60,7 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// test Conversion between Recipe and RecipeObject
-  func testGivenARecipeObject_whenUserConverts_thenCDMReturnsARecipeObject(){
+  func testGivenARecipeObject_whenUserConverts_thenCDMReturnsARecipeObject() {
     // create recipe
     setupSingleItem()
     // Load first recipe
@@ -72,7 +72,7 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// test if recipe is favorite
-  func testGivenRecipeId_whenRecipeIsStored_thenReturnsIsFavoriteTrue(){
+  func testGivenRecipeId_whenRecipeIsStored_thenReturnsIsFavoriteTrue() {
     // create recipe
     setupSingleItem()
     //check if it is stored
@@ -83,7 +83,7 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// Test loadRecipe()
-  func testGivenCDMIsNotEmpty_whenUSerLoadsRecipes_thenItReturnsRecipes(){
+  func testGivenCDMIsNotEmpty_whenUSerLoadsRecipes_thenItReturnsRecipes() {
     var stack: [Recipe]?
     // create recipes
     setupMultipleItems()
@@ -94,8 +94,8 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// Test deleteItem
-  func testGivenitemStoredInCDM_whenUserDeletes_thenitemsisRemoved(){
-    var stack : [Recipe]?
+  func testGivenitemStoredInCDM_whenUserDeletes_thenitemsisRemoved() {
+    var stack: [Recipe]?
     // create recipes
     setupSingleItem()
     // load recipes in array
@@ -107,12 +107,12 @@ class CoreDataManagerTests: XCTestCase {
     // load all recipes
     stack = mockData.loadRecipe()
     // stack is purged
-    XCTAssertEqual(stack!,[])
+    XCTAssertEqual(stack!, [])
   }
   
   /// Test deleteAll()
-  func testGivenitemsStoredInCDM_whenUserDeletesAll_thenCDMIsEmpty(){
-    var stack : [Recipe]?
+  func testGivenitemsStoredInCDM_whenUserDeletesAll_thenCDMIsEmpty() {
+    var stack: [Recipe]?
     // create recipes
     setupMultipleItems()
     // delete recipe items all
@@ -120,7 +120,7 @@ class CoreDataManagerTests: XCTestCase {
     // reload data
     stack = mockData.loadRecipe()
     // stack is purged
-    XCTAssertEqual(stack!,[])
+    XCTAssertEqual(stack!, [])
   }
   
   /// Test if user already exist in CoreData
@@ -144,19 +144,19 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// Test purging users entities
-  func testGivenUserStackPopulated_whenClearStack_thenStackIsEmpty(){
+  func testGivenUserStackPopulated_whenClearStack_thenStackIsEmpty() {
     // Create users and recipes
     setupMultipleItems()
     // purge users
     mockData.clearUsers()
     // Load users
-    let data : [User] = mockData.loadUsers()
+    let data: [User] = mockData.loadUsers()
     // count must be 0
     XCTAssert(data.count == 0)
   }
   
   /// Test login()
-  func testGivenAnExistingUser_whenLogging_thenReturnsTrue(){
+  func testGivenAnExistingUser_whenLogging_thenReturnsTrue() {
     // Create user and recipe
     setupSingleItem()
     // login and verify returns true if user is signed up
@@ -166,7 +166,7 @@ class CoreDataManagerTests: XCTestCase {
   }
   
   /// Test fetchUser()
-  func testWhenAUserIsLogged_whenWefetchHimFromUSerDefaults_thenHisEmailIsReturned(){
+  func testWhenAUserIsLogged_whenWefetchHimFromUSerDefaults_thenHisEmailIsReturned() {
     // userDefaults
     let defaults = UserDefaults.standard
     // inject value in userDefaults

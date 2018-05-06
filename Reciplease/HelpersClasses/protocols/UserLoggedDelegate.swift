@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol to pass CurrentUser throught Controllers
-protocol userLoggedDelegate {
+protocol userLoggedDelegate: class {
   ///
   /// Current User
   ///

@@ -21,9 +21,9 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
  /// Instantiate UserManager to grab logged user
   let userManager = CoreDataManager()
   /// Array to store recipes
-  var favRecipes : [String] = []
+  var favRecipes: [String] = []
   ///  Current logged user fetched from User Defaults
-  var userLogged : User?
+  var userLogged: User?
   
   // //////////////////////////// //
   // MARK: - LIFECYCLE METHODS    //
@@ -62,10 +62,8 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
     // Assign controllers to tab bar
     viewControllers = [
       createTabBarItem("Home", imageName: "ic_home", for: homeVc),
-      createTabBarItem("Favorite", imageName: "ic_favorites_grey", for: favoriteVc),
-    ]
+      createTabBarItem("Favorite", imageName: "ic_favorites_grey", for: favoriteVc)]
   }
-  
 
   /// This method initialize tabBar item and insert them in a navigationController
   ///
@@ -74,7 +72,7 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
   ///   - imageName: String name of the image in xcassets
   ///   - controller: UIViewController Controller targeted by item
   /// - Returns: NavigationController that encapsulate the Controllers
-  func createTabBarItem(_ title: String, imageName: String, for controller : UIViewController) -> UINavigationController{
+  func createTabBarItem(_ title: String, imageName: String, for controller: UIViewController) -> UINavigationController {
     let navController = UINavigationController(rootViewController: controller)
     // Set title
     navController.tabBarItem.title = title
@@ -99,4 +97,3 @@ class MainTabBarController: UITabBarController, userLoggedDelegate {
     return userLogged!
   }
 }
-

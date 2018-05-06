@@ -10,7 +10,6 @@ import Foundation
 import ILLoginKit
 import UIKit
 
-
 class LoginCoordinator: ILLoginKit.LoginCoordinator {
  
   // /////////////////// //
@@ -20,7 +19,7 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   /// instance of User Manager to connect to the model
   let userManager = CoreDataManager()
 
-  override func start(animated: Bool = true){
+  override func start(animated: Bool = true) {
     super.start()
     configureAppearance()
   }
@@ -32,21 +31,21 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   /// Customize LoginKit. All properties have defaults, only set the ones you want.
   func configureAppearance() {
     // Customize the look with background & logo images
-    configuration.backgroundImage =  #imageLiteral(resourceName: "splash")
+    configuration.backgroundImage = UIImage(named: Config.loginBackground)!
       // Change colors
-    configuration.tintColor = UIColor(red: 52.0/255.0, green: 152.0/255.0, blue: 219.0/255.0, alpha: 1)
-   configuration.errorTintColor = UIColor(red: 253.0/255.0, green: 227.0/255.0, blue: 167.0/255.0, alpha: 1)
-    
+    configuration.tintColor = Config.loginColor
+   configuration.errorTintColor =
+    Config.errorColor
     // Change placeholder & button texts, useful for different marketing style or language.
-    configuration.loginButtonText = "Sign In"
-    configuration.signupButtonText = "Create Account"
-    configuration.facebookButtonText = "Login with Facebook"
-    configuration.forgotPasswordButtonText = "Forgot password?"
-    configuration.recoverPasswordButtonText = "Recover"
-    configuration.namePlaceholder = "Name"
-    configuration.emailPlaceholder = "E-Mail"
-    configuration.passwordPlaceholder = "Password!"
-    configuration.repeatPasswordPlaceholder = "Confirm password!"
+    configuration.loginButtonText = Config.signInString
+    configuration.signupButtonText =  Config.signUpString
+    configuration.facebookButtonText = Config.facebookLoginString
+    configuration.forgotPasswordButtonText = Config.forgotPassworwordString
+    configuration.recoverPasswordButtonText = Config.recoverString
+    configuration.namePlaceholder = Config.nameString
+    configuration.emailPlaceholder = Config.emailString
+    configuration.passwordPlaceholder = Config.passwordString
+    configuration.repeatPasswordPlaceholder =  Config.confirmString
   }
   
   // ////////////////////////// //
@@ -56,15 +55,15 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   /// Handle login
   override func login(email: String, password: String) {
     //print("Login with: email =\(email) password = \(password)")
-    if userManager.logInUser(email: email, password: password){
+    if userManager.logInUser(email: email, password: password) {
       userManager.setLoggedUser(email: email)
     }
   }
   
   /// Handle signup 
  override func signup(name: String, email: String, password: String) {
-   // print("Signup with: name = \(name) email =\(email) password = \(password)")
-    if userManager.checkExistingUsers(email: email){
+
+    if userManager.checkExistingUsers(email: email) {
       print("This user already exists")
     } else {
       userManager.createUser(name: name, email: email, password: password)
@@ -77,12 +76,10 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
     let name = "\(profile.fullName)"
     let email = profile.email
     let password = profile.facebookId
-    if userManager.checkExistingUsers(email: email){
-      print("user exists")
+    if userManager.checkExistingUsers(email: email) {
       userManager.setLoggedUser(email: profile.email)
       presentTabBarController()
-    }
-    else {
+    } else {
       userManager.createUser(name: name, email: email, password: password)
       presentTabBarController()
     }
@@ -95,7 +92,7 @@ class LoginCoordinator: ILLoginKit.LoginCoordinator {
   
   /// Present Tab Bar Controller by re assigning RootViewController.
   /// This prevent from separate hierarchy
-  func presentTabBarController(){
+  func presentTabBarController() {
     let tabVc = MainTabBarController()
     let appDelegate = UIApplication.shared.delegate
     appDelegate?.window!?.rootViewController = tabVc

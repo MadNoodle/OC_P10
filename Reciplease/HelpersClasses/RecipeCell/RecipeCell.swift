@@ -11,16 +11,16 @@ import UIKit
 
 /// Custom cell for Result Display tableViews
 class RecipeCell: UITableViewCell {
-  
+
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
   @IBInspectable var cornerRadius: CGFloat = 20
-  
+
   // /////////////// //
   // MARK: - OUTLETS //
   // /////////////// //
-  
+
   /// Container for informations. Used to create a separate background color
   @IBOutlet weak var container: UIView!
   /// Recipe thumbnail
@@ -31,19 +31,19 @@ class RecipeCell: UITableViewCell {
   @IBOutlet weak var duration: UILabel!
   /// Number of servings
   @IBOutlet weak var servings: UILabel!
-  
+
   // ///////////////////////// //
   // MARK: - LIFECYCLE METHODS //
   // ///////////////////////// //
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     self.container.layer.cornerRadius = cornerRadius
     self.container.layer.masksToBounds = true
   }
-  
+
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
   }
-  
+
 }

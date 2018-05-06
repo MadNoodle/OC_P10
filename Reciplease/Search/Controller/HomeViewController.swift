@@ -8,20 +8,18 @@
 
 import UIKit
 
-
-
 /// This class takes care of showing the homeViewController nested in UITabBarController
 /// It handles the ingredient list and searcch functionnalities
 class HomeViewController: UIViewController, userLoggedDelegate {
 
   /// Array to store ingredients entered by user
-  var list : [String] = []
+  var list: [String] = []
   /// Array that stores list of fetch ids for ingredient's search
-  var ids : [String] = []
+  var ids: [String] = []
   /// Delegate to receive user from MainTabBar Controller
-  var delegate: userLoggedDelegate?
+  weak var delegate: userLoggedDelegate?
   /// Property that stores and the logged user
-  var user: User?
+  weak var user: User?
   
   // //////////////// //
   // MARK: - OUTLETS //
@@ -32,7 +30,6 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   @IBOutlet weak var ingredientTable: UITableView!
   /// textField where user type ingredients to add to the list
   @IBOutlet weak var inputTextField: UITextField!
-  
   
   // ////////////////////////// //
   // MARK: - LIFECYCLE METHODS //
@@ -51,7 +48,6 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   // MARK: - ACTIONS METHODS //
   // /////////////////////// //
   
-  
   /// Add ingredient un ingredient Array and update tableView
   ///
   /// - Parameter sender: UIButton
@@ -63,8 +59,7 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   ///
   /// - Parameter sender: UIButton
   @IBAction func clearList(_ sender: UIButton) {
-    if list != []
-    {
+    if list != [] {
       // Clear ingredient list
       list = []
       // update tableView
@@ -79,7 +74,7 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   /// - Parameter sender: UIButton
   @IBAction func searchRecipes(_ sender: UIButton) {
     // instantiate controller
-    if list != []{
+    if list != [] {
       loadDataInTable()
       } else {
       showAlert(message: "Sorry i can't help you if your fridge is empty")
@@ -89,7 +84,7 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   /// Perform a fetch request with ingredient List and present resultController
   func loadDataInTable() {
     let encoded = RecipeApiManager.splitIngredients(list: list)
-    RecipeApiManager.searchRecipe(with: encoded , completion: {(recipeNames, error) in
+    RecipeApiManager.searchRecipe(with: encoded, completion: {(recipeNames, error) in
       if error != nil {
         print("error")
       }
@@ -103,7 +98,6 @@ class HomeViewController: UIViewController, userLoggedDelegate {
   // ////////////////////////// //
   // MARK: - DELEGATION METHODS //
   // ///////////////////////// //
-  
   
   /// Sets up delegation fro textField and tableView
   func setupDelegations() {
@@ -141,13 +135,8 @@ class HomeViewController: UIViewController, userLoggedDelegate {
       list.append(text!)
       ingredientTable.reloadData()
       inputTextField.text = ""
-    }
-    else {
+    } else {
       showAlert(message: "nothing is not an ingredient")
     }
   }
-
-
-  
 }
-

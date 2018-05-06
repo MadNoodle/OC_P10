@@ -31,5 +31,4 @@ class CustomButton: UIButton {
     layer.borderWidth = lineWeigth
   }
   
-  
 }

@@ -20,17 +20,16 @@ class Detail: UIViewController {
   let userManager = CoreDataManager()
 
   /// delegate to receive Recipe Informations
-  var delegate: DisplayRecipeDelegate?
+  weak var delegate: DisplayRecipeDelegate?
   /// delegate to receive logged user informations
-  var userDelegate: userLoggedDelegate?
+  weak var userDelegate: userLoggedDelegate?
   /// property to receive user informations
-  var user : User?
+  var user: User?
   /// DetailRecipeDelegate property to receive data from display Controller
-  var recipe : RecipeObject?
+  var recipe: RecipeObject?
   /// Array to store ingredients
   var ingredients: [String] = []
  
-  
   // /////////////// //
   // MARK: - OUTLETS //
   // /////////////// //
@@ -77,7 +76,7 @@ class Detail: UIViewController {
   /// Instantiate nav Bar and customize appearance
   ///
   /// - Parameter imgName: favorite icon image
-  private func setupNavBar(imgName: String){
+  private func setupNavBar(imgName: String) {
     // sets background image to transparent by removing image and shadow
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -89,12 +88,12 @@ class Detail: UIViewController {
     let shareImage = UIImage(named: "export.png")
     let shareItem = UIBarButtonItem(image: shareImage, style: .plain, target: self, action: #selector(self.share(sender:)))
     //instantiate right barButton in navBar
-    self.navigationItem.rightBarButtonItems = [item,shareItem]
+    self.navigationItem.rightBarButtonItems = [item, shareItem]
   }
   
   /// Check if the recipe is stored in core Data stack and display the right icon
   private func setNavBarFavImage() {
-    if (userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!) {
       // if stored heart is orange
       setupNavBar(imgName: "ic_favorites_orange")
     } else {
@@ -104,7 +103,7 @@ class Detail: UIViewController {
   }
   
   /// Methods that resets the navbar to initial paraameters when leaving controller
-  private func resetNavBar(){
+  private func resetNavBar() {
     //Set fonts for navbar title
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Montserrat-Bold", size: 22)!]
     //Set fonts for back Button
@@ -117,14 +116,12 @@ class Detail: UIViewController {
     
   }
   
-  
   /// TableView instantiation methods
   private func setupTableView() {
     ingredientsTableView.delegate = self
     ingredientsTableView.register(IngredientCell.self, forCellReuseIdentifier: "ingredientCell")
     ingredientsTableView.reloadData()
   }
-  
   
   /// Populate the view with reived data from delegate
   func receiveValueFromSearchResult() {
@@ -140,10 +137,9 @@ class Detail: UIViewController {
       // task to be done on background queue to do not slow UI display
       DispatchQueue.main.async {
       // get image Url from String
-        if let url = URL(string:(self.recipe?.image)!)
-      {
+        if let url = URL(string: (self.recipe?.image)!) {
         //Get data from Url
-        let imageData:NSData = NSData(contentsOf: url)!
+        let imageData: NSData = NSData(contentsOf: url)!
           let image = UIImage(data: imageData as Data)
           self.imageRecipe.image = image
         
@@ -159,17 +155,22 @@ class Detail: UIViewController {
   /// CallBack function for RigthButtonItem in Navbar
   ///
   /// - Parameter sender: Right NavBar item
-  @objc func setFavorite(sender:UIBarButtonItem){
+  @objc func setFavorite(sender: UIBarButtonItem) {
     // Checks if the unique id from Yummly appears in Stack
-    if (userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!)) {
+    if userManager.checkIfRecipeObjectIsStored(id: (recipe?.id!)!) {
       recipe?.isFavorite = false
       userManager.deleteItem(recipe!)
       sender.image = UIImage(named: "ic_notification")
     } else {
       recipe?.isFavorite = true
-      if user != nil
-      {
-        userManager.saveRecipe(user: user! ,id: (recipe?.id)!, isFavorite: (recipe?.isFavorite)!, recipeName: (recipe?.recipeName)!, totalTime: recipe?.totalTime, yield: recipe?.yield, ingredients: (recipe?.ingredients)!, image: (recipe?.image)!, url: recipe?.url)
+      if user != nil {
+        userManager.saveRecipe(user: user!, id: (recipe?.id)!,
+                               isFavorite: (recipe?.isFavorite)!,
+                               recipeName: (recipe?.recipeName)!,
+                               totalTime: recipe?.totalTime,
+                               yield: recipe?.yield,
+                               ingredients: (recipe?.ingredients)!,
+                               image: (recipe?.image)!, url: recipe?.url)
       sender.image = UIImage(named: "ic_favorites_orange")?.withRenderingMode(.alwaysOriginal)
         
       }
@@ -184,12 +185,13 @@ class Detail: UIViewController {
   /// Callback function for sharing a recipe
   ///
   /// - Parameter sender: shareButton
-  @objc func share(sender:UIBarButtonItem){
+  @objc func share(sender: UIBarButtonItem) {
     if recipe?.url != nil {
       let recipeUrl = recipe?.url
       let activityController = UIActivityViewController(activityItems: [recipeUrl!], applicationActivities: nil)
-    present( activityController, animated: true, completion: nil )}
-    else {
+    present( activityController, animated: true, completion: nil )
+      
+    } else {
       showAlert(message: "Sorry you cannot share this recipe")
     }
   }

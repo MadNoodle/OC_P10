@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 //  MockCoreDataManager.swift
 //  Reciplease
@@ -34,7 +33,7 @@ import CoreData
 /// on the SQLite container.
 ///
 /// - Author: Rafael Papallas
-class MockDataManager: CoreDataManager{
+class MockDataManager: CoreDataManager {
   
   /// Returns a `NSManagedObjectContext` linking to memory instead of SQLite
   override func managedObjectContext() -> NSManagedObjectContext {
@@ -73,8 +72,7 @@ class MockDataManager: CoreDataManager{
     
     do {
       try coordinator!.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-    }
-    catch {
+    } catch {
       coordinator = nil
       print("Error")
     }
@@ -82,4 +80,3 @@ class MockDataManager: CoreDataManager{
     return coordinator
   }()
 }
-

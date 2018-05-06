@@ -34,14 +34,13 @@ class CoreDataManager {
   // MARK: - USERS STORING //
   // ////////////////////// //
   
-  
   /// Check if user is already registered in Core Data
   ///
   /// - Parameter email: String. Email
   /// - Returns: Bool. true is already registered
-  func checkExistingUsers(email:String) -> Bool{
-    let users : [User] = loadUsers()
-    var existingUsers : [String] = []
+  func checkExistingUsers(email: String) -> Bool {
+    let users: [User] = loadUsers()
+    var existingUsers: [String] = []
     for user in users {
       existingUsers.append(user.email!)
     }
@@ -51,7 +50,6 @@ class CoreDataManager {
       return false
     }
   }
-  
   
   /// This method create a new User in Managed Context
   ///
@@ -113,7 +111,7 @@ class CoreDataManager {
   ///   - email: String user's email
   ///   - password: String user's password
   /// - Returns: Bool. true if granted
-  func logInUser(email:String, password:String) -> Bool {
+  func logInUser(email: String, password: String) -> Bool {
     let users = loadUsers()
     var answer = false
     for user in users {
@@ -128,13 +126,11 @@ class CoreDataManager {
   ///
   /// - Parameter email: String email to search
   /// - Returns: User. user stored in Core Data
-  func fetchUser(email:String) -> User {
-    var userLogged : User?
+  func fetchUser(email: String) -> User {
+    var userLogged: User?
     let users = loadUsers()
-    for user in users {
-      if user.email == email {
+    for user in users where user.email == email {
         userLogged = user
-      }
     }
     return userLogged!
   }
@@ -142,7 +138,7 @@ class CoreDataManager {
   /// Store logged user in User defaults to retrieve it when calling new rootViewController
   ///
   /// - Parameter email: String
-  func setLoggedUser(email:String){
+  func setLoggedUser(email: String) {
     defaults.set(email, forKey: "currentUser")
   }
   
@@ -158,12 +154,9 @@ class CoreDataManager {
     return userLogged!
   }
   
-  
   // ////////////////// //
   // MARK: - PROPERTIES //
   // ////////////////// //
-  
-
   
   // /////////////// //
   // MARK: - CREATE //
@@ -195,10 +188,6 @@ class CoreDataManager {
     if url != nil { recipeItem.url = url} else {recipeItem.url = ""}
     recipeItem.user = user
     
-    //------CONTROL PRINT-------//
-    printRecipesFor(user)
-    
-    
     // save Context
     do {
       try managedObjectContext().save()
@@ -207,7 +196,6 @@ class CoreDataManager {
       
     }
   }
-  
   
   // //////////// //
   // MARK: - READ //
@@ -220,7 +208,7 @@ class CoreDataManager {
     // array to store the recipe Objects from core data
     var recipes: [Recipe] = []
     // array to strore extracted ids
-    var recipesIds : [String] = []
+    var recipesIds: [String] = []
     // Perform fetch request
     let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
     do {
@@ -256,7 +244,7 @@ class CoreDataManager {
   /// - Returns: RecipeObject
   func convertRecipeToObject(recipe: Recipe) -> RecipeObject {
     // Create a dictionnary from recipe value
-    let favRecipeDictionnary:[String: Any] = [
+    let favRecipeDictionnary: [String: Any] = [
       "id": recipe.id!,
       "isFavorite": recipe.isFavorite,
       "name": recipe.recipeName!,
@@ -309,15 +297,14 @@ class CoreDataManager {
   // MARK: - CONTROL METHODS //
   // ////////////////////// //
   
-  
   /// Check if an id matches a core data instance id
   ///
   /// - Parameter id: String id from object you want to check
   /// - Returns: Bool
-  func checkIfRecipeObjectIsStored(id: String) -> Bool{
-    let datas:[String] = loadData()
+  func checkIfRecipeObjectIsStored(id: String) -> Bool {
+    let datas: [String] = loadData()
     var checkAnswer = false
-    if datas.contains(id){
+    if datas.contains(id) {
       checkAnswer = true
     }
     return checkAnswer
@@ -336,5 +323,3 @@ class CoreDataManager {
     }
   }
 }
-
-

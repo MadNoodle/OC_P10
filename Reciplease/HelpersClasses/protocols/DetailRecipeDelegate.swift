@@ -9,14 +9,10 @@
 import Foundation
 
 /// Passes Recipe data to another controller
-protocol  DisplayRecipeDelegate {
+protocol  DisplayRecipeDelegate: class {
   
   /// passes recipe
   ///
   /// - Returns: RecipeObject
   func didSelectARecipe() -> RecipeObject
 }
-
-
-
-

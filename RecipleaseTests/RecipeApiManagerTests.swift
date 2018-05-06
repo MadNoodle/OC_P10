@@ -13,7 +13,7 @@ class RecipeApiManagerTests: XCTestCase {
   
   /// Test function splitIngredients()
   func testGivenListOfIngredient_whenUserPressSearch_thenAnEncodedStrinIsCreated() {
-    let ingredients = ["onion","ham"]
+    let ingredients = ["onion", "ham"]
     let encodedEndPoint = RecipeApiManager.splitIngredients(list: ingredients)
     XCTAssertEqual(encodedEndPoint, "onion&allowedIngredient[]=ham")
     
@@ -22,10 +22,13 @@ class RecipeApiManagerTests: XCTestCase {
   /// Test function searchRecipe()
   func testGivenAnEncodedListIsEntered_whenUserSearch_thenListOfIdisReturned() {
     let ex = expectation(description: "returns a list of strings")
-    let ingredients = ["onion","ham"]
+    let ingredients = ["onion", "ham"]
     let encodedEndPoint = RecipeApiManager.splitIngredients(list: ingredients)
-    var resultArray : [String]?
-    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(result,error) in
+    var resultArray: [String]?
+    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(result, error) in
+      if error != nil {
+        print(error!.localizedDescription)
+      }
       resultArray = result
       
     })
@@ -41,9 +44,9 @@ class RecipeApiManagerTests: XCTestCase {
   /// Test function searchRecipe() Error
   func testGivenAnInvalidListIsEntered_whenUserSearch_thenErrorIsReturned() {
     let ex = expectation(description: "returns an error")
-    let ingredients = ["onioefvqsvcqvfds   n","hadfsqfdsqfqsm"]
+    let ingredients = ["onioefvqsvcqvfds   n", "hadfsqfdsqfqsm"]
     let encodedEndPoint = RecipeApiManager.splitIngredients(list: ingredients)
-    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(result,error) in
+    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(_, error) in
       XCTAssert(error != nil)
       ex.fulfill()}
     )
@@ -58,11 +61,11 @@ class RecipeApiManagerTests: XCTestCase {
   /// test getRecipe()
   func testGivenAlistOfIds_whenGettingRecipes_thenRecipesAreReturned() {
     let ex = expectation(description: "returns a RecipeObject")
-    let ingredients = ["onion","ham"]
+    let ingredients = ["onion", "ham"]
     let encodedEndPoint = RecipeApiManager.splitIngredients(list: ingredients)
     var recipes: [RecipeObject]?
-    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(result,error) in
-      RecipeApiManager.getRecipe(result, completion: {(results,error) in
+    RecipeApiManager.searchRecipe(with: encodedEndPoint, completion: {(result, _) in
+      RecipeApiManager.getRecipe(result, completion: {(results, _) in
         recipes = results
         XCTAssert(recipes != nil)
         ex.fulfill()})
@@ -74,7 +77,5 @@ class RecipeApiManagerTests: XCTestCase {
       }
     }
   }
-  
-  
   
 }

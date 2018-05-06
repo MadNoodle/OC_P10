@@ -9,7 +9,7 @@
 import UIKit
 
 /// Handles tableView Delegation
-extension Detail : UITableViewDelegate, UITableViewDataSource{
+extension Detail: UITableViewDelegate, UITableViewDataSource {
   
   // ////////////////////////////////// //
   // MARK: - TABLEVIEW PROTOCOL METHODS //
@@ -19,9 +19,9 @@ extension Detail : UITableViewDelegate, UITableViewDataSource{
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = Bundle.main.loadNibNamed("IngredientCell", owner: self, options: nil)?.first as! IngredientCell
-    cell.ingredientLabel.text = ingredients[indexPath.row]
-    return cell
+    let cell = Bundle.main.loadNibNamed("IngredientCell", owner: self, options: nil)?.first as? IngredientCell
+    cell?.ingredientLabel.text = ingredients[indexPath.row]
+    return cell!
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

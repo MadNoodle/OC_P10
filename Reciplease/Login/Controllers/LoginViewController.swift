@@ -40,5 +40,4 @@ class LoginViewController: UIViewController {
     loginCoordinator.start()
   }
 
- 
 }
