@@ -69,6 +69,7 @@ class RecipeApiManager {
           }
         // Connexion error
         case .failure(let error):
+
           print("error: \(error.localizedDescription)")
           // send back an error to trigger an alert
           completion( [], error)

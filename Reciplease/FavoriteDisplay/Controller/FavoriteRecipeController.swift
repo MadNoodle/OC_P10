@@ -26,7 +26,7 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
   var user: User?
   /// Instantiate user and recipe management functionnalities
   let userManager = CoreDataManager()
-
+  
   // ////////////////////////////// //
   // MARK: FETCH RESULTS CONTROLLER //
   // ////////////////////////////// //
@@ -47,12 +47,31 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
     frc.delegate = self
     return frc
   }()
- 
+  
   // ///////////////////////// //
   // MARK: - LIFECYCLE METHODS //
   // ///////////////////////// //
   
-  fileprivate func loadRecipes() {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.title = "FAVORITES"
+    loadRecipes()
+    // Register custom Cell
+    tableView.register(RecipeCell.self, forCellReuseIdentifier: "myCell")
+    handleEmptyFavorites()
+    tableView.reloadData()
+  }
+  
+  
+  // ///////////////////////// //
+  // MARK: - PASSING USER      //
+  // ///////////////////////// //
+  
+  func CurrentUser() -> User {
+    return user!
+  }
+  
+  private func loadRecipes() {
     // receive logged user from MainTabBarController
     if delegate != nil {
       user = delegate?.CurrentUser()
@@ -66,25 +85,14 @@ class FavoriteRecipeController: UITableViewController, userLoggedDelegate {
     }
   }
   
-  override func viewDidLoad() {
-      super.viewDidLoad()
-      self.title = "FAVORITES"
-      loadRecipes()
-      // Register custom Cell
-      tableView.register(RecipeCell.self, forCellReuseIdentifier: "myCell")
-      tableView.reloadData()
+  private func handleEmptyFavorites() {
+    if self.fetchedResultController.fetchedObjects?.count == 0 {
+      let alertVc = UIAlertController(title:"Please add new Recipe", message: "Go in Home Tab. Search for a recipe and click on the heart icon to add it as favorite", preferredStyle: .alert)
+      let discardAction = UIAlertAction(title: "Discard", style: .cancel) { (alert) in
+        alertVc.dismiss(animated: true)
+      }
+      alertVc.addAction(discardAction)
+      present(alertVc,animated: true)
     }
-
-  override func viewWillAppear(_ animated: Bool) {
-    
-    //tableView.reloadData()
-  }
-  
-  // ///////////////////////// //
-  // MARK: - PASSING USER      //
-  // ///////////////////////// //
-  
-  func CurrentUser() -> User {
-    return user!
   }
 }

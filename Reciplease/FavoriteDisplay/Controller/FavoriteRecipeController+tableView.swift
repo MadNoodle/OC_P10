@@ -21,13 +21,14 @@ override func numberOfSections(in tableView: UITableView) -> Int {
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   guard let count = fetchedResultController.sections?[0].numberOfObjects else { return 0}
+
     return count
   
 }
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
   let cell = Bundle.main.loadNibNamed("RecipeCell", owner: self, options: nil)?.first as? RecipeCell
- 
+  
      // fetch data from fetchResultController to autoUpdate
     let favorite = self.fetchedResultController.object(at: indexPath) 
    

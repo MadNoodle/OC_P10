@@ -40,7 +40,8 @@
 		B9B3ED442013A6D800E98460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B3ED422013A6D800E98460 /* LaunchScreen.storyboard */; };
 		B9B3ED5A2013A6D800E98460 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B3ED592013A6D800E98460 /* RecipleaseUITests.swift */; };
 		B9C978D2203250F300452512 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C978D1203250F300452512 /* MockDataManager.swift */; };
-		B9E6A0DA209F67C60013623C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6A0D9209F67C60013623C /* Constants.swift */; };
+		B9E6A0DA209F67C60013623C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6A0D9209F67C60013623C /* Config.swift */; };
+		B9E6A0DE20A03AF90013623C /* USerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6A0DD20A03AF90013623C /* USerAlert.swift */; };
 		B9E73387201544E400FC61AB /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E73385201544E400FC61AB /* RecipeCell.swift */; };
 		B9E73388201544E400FC61AB /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E73386201544E400FC61AB /* RecipeCell.xib */; };
 		B9E7338B2015529C00FC61AB /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9E733892015529B00FC61AB /* Montserrat-Regular.otf */; };
@@ -120,7 +121,8 @@
 		B9B3ED5B2013A6D800E98460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9C978CE20320FB400452512 /* RecipleaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecipleaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B9C978D1203250F300452512 /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
-		B9E6A0D9209F67C60013623C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B9E6A0D9209F67C60013623C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B9E6A0DD20A03AF90013623C /* USerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USerAlert.swift; sourceTree = "<group>"; };
 		B9E73385201544E400FC61AB /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		B9E73386201544E400FC61AB /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		B9E733892015529B00FC61AB /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
@@ -375,7 +377,7 @@
 				B9D864FF2016A2AB00865EE5 /* HelpersClasses */,
 				B9B3ED672013A83900E98460 /* SupportingFIles */,
 				B9B3ED452013A6D800E98460 /* Info.plist */,
-				B9E6A0D9209F67C60013623C /* Constants.swift */,
+				B9E6A0D9209F67C60013623C /* Config.swift */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -416,14 +418,31 @@
 		B9D864FF2016A2AB00865EE5 /* HelpersClasses */ = {
 			isa = PBXGroup;
 			children = (
-				B9E733AA2015EE7B00FC61AB /* Extensions.swift */,
+				B9E6A0DC20A03AE10013623C /* UIClasses */,
+				B9E6A0DB20A037830013623C /* Extensions */,
 				B94120822031FFD6001A0416 /* testMocks */,
 				B94120812031FFCA001A0416 /* protocols */,
+				B9E6A0DD20A03AF90013623C /* USerAlert.swift */,
+			);
+			path = HelpersClasses;
+			sourceTree = "<group>";
+		};
+		B9E6A0DB20A037830013623C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B9E733AA2015EE7B00FC61AB /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9E6A0DC20A03AE10013623C /* UIClasses */ = {
+			isa = PBXGroup;
+			children = (
 				B9E73392201558A100FC61AB /* RecipeCell */,
 				B9A2DF102024B03200E682B4 /* IngredientCell */,
 				B9A00B7F201650960045522F /* CustomButton.swift */,
 			);
-			path = HelpersClasses;
+			path = UIClasses;
 			sourceTree = "<group>";
 		};
 		B9E733832015448500FC61AB /* RecipesDisplay */ = {
@@ -874,6 +893,7 @@
 				B90BCDA12013D5D00054322E /* RecipeApiManager.swift in Sources */,
 				B97919EF201A207400686F69 /* CoreDataManager.swift in Sources */,
 				B94ECC8B2016A80D00557F70 /* HomeViewController+textField.swift in Sources */,
+				B9E6A0DE20A03AF90013623C /* USerAlert.swift in Sources */,
 				B9E733A72015DD7600FC61AB /* HomeViewController.swift in Sources */,
 				B94F62872017E22600C7394E /* DetailRecipeDelegate.swift in Sources */,
 				B9EE59D7202E239E00FFD609 /* LoginViewController.swift in Sources */,
@@ -891,7 +911,7 @@
 				B92D970D201A90DD00A3D2A3 /* Detail+tableview.swift in Sources */,
 				B9E733AB2015EE7B00FC61AB /* Extensions.swift in Sources */,
 				B90BCD9F2013CB2C0054322E /* Constants.swift in Sources */,
-				B9E6A0DA209F67C60013623C /* Constants.swift in Sources */,
+				B9E6A0DA209F67C60013623C /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
